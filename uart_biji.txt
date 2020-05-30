@@ -15,7 +15,31 @@ Linux驱动中的设备树的根节点就是二叉树的根节点。
 收获一：根节点下的chosen、CPU、memory、rom、ram、等节点是兄弟关系。include/linux/of.h 在这个头文件中有说明，在结构体device_node结构体中
 
 
-4，
+4，平台设备和平台驱动2者进行匹配。platform_device跟platform_driver的匹配
+
+platform_driver函数会进行驱动和设备的匹配------知道这个点就行了
+
+5，内核是怎么匹配芯片的？？？或者说内核是怎么处理各种不同平台的？？？
+内核中有一种machine_desc结构体，里面有.init和.nr，
+
+内核中有多个machine_desc,其中有dt_compat成员, 它指向一个字符串数组, 里面表示该machine_desc支持哪些单板；
+用内核中的 machine_desc 结构体中的元素和设备树中的compatile 比较，实现方法是便利内核中的 machine_desc 的元素。
+    
+    
+6，设备树通过U-BOOT和内核进行交互，那么内核是怎么找到他要的那个设备树的？？？
+通过machine_desc匹配不同的平台，匹配成功的平台就是你要的那个平台，匹配到的compatible 兼容性芯片就是平台了。
+
+7，以上是注册的流程，主要是内核和设备树进行交互。问题是UBOOT怎么就和设备树扯上关系了呢？？？
+
+
+
+
+
+
+
+
+
+
 
 
 
