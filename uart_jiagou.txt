@@ -1,0 +1,61 @@
+1,之前你看了设备树，看了平台和内核进行匹配，看了驱动和设备进行匹配，那么你怎么结合串口的内核架构进行说明呢？？？
+
+
+2，这一节还要补充引脚，还有时钟，打开串口这些操作，进行linux和STM32的对比,串口的配置如下：
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+1、串口的操作
+1.1打开：fd = open("/dev/ttySAC1", O_RDWR | O_NOCTTY | O_NDELAY);
+              O_RDWR 读写方式打开；
+              O_NOCTTY 不允许进程管理串口（不太理解，一般都选上）；
+              O_NDELAY 非阻塞（默认为阻塞，打开后也可以使用fcntl()重新设置）
+1.2写入：n = write(fd, "linux", 5);
+                n实际写入字节数；
+1.3读取：res = read(fd,buf,len);
+                 res 读取的字节数；
+1.4设置：fcntl(fd, F_SETFL, FNDELAY); //非阻塞
+                 fcntl(fd, F_SETFL, 0); // 阻塞
+1.5关闭：close(fd);
+2、串口配置
+struct termios options;  // 串口配置结构体
+tcgetattr(fd,&options); //获取当前设置
+bzero(&options,sizeof(options));
+options.c_cflag  |= B115200 | CLOCAL | CREAD; // 设置波特率，本地连接，接收使能
+options.c_cflag &= ~CSIZE; //屏蔽数据位
+options.c_cflag  |= CS8; // 数据位为 8 ，CS7 for 7 
+options.c_cflag &= ~CSTOPB; // 一位停止位， 两位停止为 |= CSTOPB
+options.c_cflag &= ~PARENB; // 无校验
+ //options.c_cflag |= PARENB; //有校验
+//options.c_cflag &= ~PARODD // 偶校验
+//options.c_cflag |=  PARODD    // 奇校验
+options.c_cc[VTIME] = 0; // 等待时间，单位百毫秒 （读）。后有详细说明
+options.c_cc[VMIN] = 0; // 最小字节数 （读）。后有详细说明
+tcflush(fd, TCIOFLUSH); // TCIFLUSH刷清输入队列。
+                                       TCOFLUSH刷清输出队列。 
+                                       TCIOFLUSH刷清输入、输出队列。
+tcsetattr(fd, TCSANOW, &options); // TCSANOW立即生效；
+                                                        TCSADRAIN：Wait until everything has been transmitted；
+                                                        TCSAFLUSH：Flush input and output buffers and make the change
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+3，在linux班子上，你怎么找串口？？？哪个串口是你想要的？？？
+PC上的串口一般是ttyS，板子上Linux的串口一般叫做ttySAC，是usb口转串口的是ttyUSB
+外插串口卡的话默认是dev下的ttyS* ,一般ttyS0对应com1，ttyS1对应com2
+ttyS0 串口1
+ttyS1 串口2
+
+
+4，Linux下，串口给上层提供的是哪个接口？？？
+
+
+
+5，串口设置哪个参数结构体？？？
+struct termiod 
+
+6,
+
+
+
+
+
+
+
+
