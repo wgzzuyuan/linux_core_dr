@@ -53,6 +53,9 @@ mkdosfs /dev/sda6         # 格式化成msdos文件系统
 mkfs.ext4， 然后mount，然后再往里面添加文件
 
 
+9，文件系统在哪个目录下？？？
+
+
 
 
 
