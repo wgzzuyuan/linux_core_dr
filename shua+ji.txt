@@ -50,6 +50,8 @@ mkfs.msdos /dev/sda6      # 格式化成fat16文件系统,msdos就是fat16
 mkdosfs /dev/sda6         # 格式化成msdos文件系统
 
 
+mkfs.ext4， 然后mount，然后再往里面添加文件
+
 
 
 
