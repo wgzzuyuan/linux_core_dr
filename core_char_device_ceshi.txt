@@ -1,0 +1,42 @@
+
+1,串口
+
+ if((disphd = open("/dev/disp",O_RDWR)) == -1) {
+                printf("open display device fail!\n");
+        }
+ 
+ %%%%%%%%%%%%%%发送数据%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	if(::write(fd,p,5) < 0)   
+	{
+		::printf("Write Serial fail\n");
+		return ;
+	}
+ 2，操作LED的亮灭
+ system("echo 42 >/sys/class/gpio/export;echo out >/sys/class/gpio/gpio42/direction;echo 0 >/sys/class/gpio/gpio42/value");
+
+
+3，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
