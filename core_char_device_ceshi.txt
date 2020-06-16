@@ -15,7 +15,18 @@
  system("echo 42 >/sys/class/gpio/export;echo out >/sys/class/gpio/gpio42/direction;echo 0 >/sys/class/gpio/gpio42/value");
 
 
-3，
+3，usb测试的时候，就是调用文件系统函数，给USB中读写内容
+
+
+
+4，
+
+
+WIFI网卡和普通的网卡的区别？？？原理上的区别？？？
+
+
+
+
 
 
 
