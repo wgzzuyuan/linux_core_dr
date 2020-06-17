@@ -1,0 +1,31 @@
+1,cat bootargs
+enforcing=1 earlyprintk=sunxi-uart,0x01c28000 initcall_debug=0 
+console=ttyS0,115200 loglevel=8 
+root=/dev/mmcblk0p7 
+init=/init 
+partitions=boot-resource@mmcblk0p2:env@mmcblk0p5:boot@mmcblk0p6:rootfs@mmcblk0p7:UDISK@mmcblk0p1 
+cma=32M vmalloc=384MB mac= wifi_mac= bt_mac= specialstr= androidboot.serialno=<NULL> boot_type=2 androidboot.hardware=sun8iw11p
+
+###看BOOT的参数，可以发现，启动的时候用的串口是串口0
+
+2，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
