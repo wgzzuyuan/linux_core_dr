@@ -2,8 +2,10 @@
 顶层驱动和上层都会用到这个接口函数做一个衔接。
 
 
-2,
-
+2,例如按下重启按钮后，让产片重启，这个就是通过 system函数实现的。
+static void sysReboot(vcoreRebootType_e type){
+system("reboot");
+}
 
 3,
 
