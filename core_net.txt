@@ -25,6 +25,23 @@
 ifconfig eth0 192.168.1.231
 
 
+7，显示以下的时候，表示是通了还是没有？？？
+64 bytes from 192.168.1.111: icmp_seq=675 ttl=128 time=1.89 ms
+64 bytes from 192.168.1.111: icmp_seq=676 ttl=128 time=1.98 ms
+64 bytes from 192.168.1.111: icmp_seq=677 ttl=128 time=2.22 ms
+64 bytes from 192.168.1.111: icmp_seq=678 ttl=128 time=1.99 ms
+64 bytes from 192.168.1.111: icmp_seq=679 ttl=128 time=2.06 ms
+64 bytes from 192.168.1.111: icmp_seq=680 ttl=128 time=1.96 ms
+64 bytes from 192.168.1.111: icmp_seq=681 ttl=128 time=2.13 ms
+64 bytes from 192.168.1.111: icmp_seq=682 ttl=128 time=1.92 ms
+
+
+显示以下的时候，表示肯定是通的。
+来自 192.168.1.203 的回复: 字节=32 时间=2ms TTL=64
+来自 192.168.1.203 的回复: 字节=32 时间=2ms TTL=64
+来自 192.168.1.203 的回复: 字节=32 时间=2ms TTL=64
+来自 192.168.1.203 的回复: 字节=32 时间=2ms TTL=64
+
 
 
 
