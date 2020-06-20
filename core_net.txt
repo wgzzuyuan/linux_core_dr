@@ -65,7 +65,7 @@ rtt min/avg/max/mdev = 2.049/2.169/2.239/0.077 ms
 
 
 6，到底这个是个什么意思？？？
-nameserver 8.8.8.8
+nameserver 8.8.8.8    
 nameserver 114.114.114.114
 
 
@@ -95,7 +95,7 @@ ICMP协议的功能===IP主机、路由器之间传递控制消息。
 10，PING百度PING不通的原因是什么？？？
 
 是DNS错误，所以要修改 nameserver 
-nameserver 8.8.8.8 
+nameserver 8.8.8.8 这个是谷歌的IP
 nameserver 114.114.114.114
 
 8.8.8.8 是 谷歌的 dns 網址
