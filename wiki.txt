@@ -61,10 +61,40 @@ Linux的基础不扎实的问题。
 从一上电，启动信息包括哪几部分？？？
 
 
-10，
+10，一上电后的启动信息如下：内容包括：
 
+HELLO! BOOT0 is starting!
+boot0 commit : 8 
+boot0 version : 4.0
+set pll start
+set pll end
+rtc[0] value = 0x00000000
+rtc[1] value = 0x00000000
+rtc[2] value = 0x00000000
+rtc[3] value = 0x00000000
+rtc[4] value = 0x00000000
+rtc[5] value = 0x00000000
+DRAMC IS FOUR
+DRAM BOOT DRIVE INFO: V1.1
+the chip id is 0x00000001
+the chip id is 0x00000001
+the chip id is 0x00000001
+the chip id is 0x00000001
+the chip id is 0x00000001
+PMU: AXP221
+ddr voltage = 1500 mv
+DRAM CLK =576 MHZ
+DRAM Type =3 (2:DDR2,3:DDR3,6:LPDDR2,7:LPDDR3)
+DRAM zq value: 0x003b3bfb
+DRAM SIZE =1024 M
+DRAM simple test OK.
 
-
+（1）RTC时间寄存器的值初始化
+（2）DRAM 的版本号，DDR的电压值，DDR的时钟值，DDR的容量
+（3）芯片id
+（3）PMU型号
+（4）BOOT0的版本
+（5）
 
 
 
