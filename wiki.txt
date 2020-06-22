@@ -10,6 +10,50 @@ mount     要挂载的文件   开发板挂载的目的目录
 
 4，虚拟机上从主机拷贝到开发板，怎么拷贝成功的？？？主机和开发板是直接复制的吗，直接拖拽的吗？？？
 
+5，linxu下管道的用法？？？
+dmesg | grep input
+
+6,linxu 的命令的补充学习？？？echo
+
+echo 241>export
+echo out > direction 
+echo 1 > value
+
+echo 0 > value
+
+用0或者1的命令来测试开发板的LED的亮和灭。
+
+
+7,插入USB 后，终端自动打印。
+[ 4438.392834] usb 1-1.1: USB disconnect, device number 6
+[ 4441.190640] usb 1-1.1: new full-speed USB device number 7 using sunxi-ehci
+[ 4441.290742] usb 1-1.1: device descriptor read/64, error -32
+[ 4441.480614] usb 1-1.1: device descriptor read/64, error -32
+[ 4441.670629] usb 1-1.1: new full-speed USB device number 8 using sunxi-ehci
+[ 4441.770628] usb 1-1.1: device descriptor read/64, error -32
+[ 4441.960623] usb 1-1.1: device descriptor read/64, error -32
+[ 4442.150723] usb 1-1.1: new full-speed USB device number 9 using sunxi-ehci
+[ 4442.570121] usb 1-1.1: device not accepting address 9, error -32
+[ 4442.650598] usb 1-1.1: new full-speed USB device number 10 using sunxi-ehci
+[ 4443.070159] usb 1-1.1: device not accepting address 10, error -32
+[ 4443.077434] hub 1-1:1.0: unable to enumerate USB device on port 1
+
+
+
+
+
+8，如何查看Linux 系统封磁盘剩余可用容量？？？
+# df -h
+Filesystem                Size  [ 4528.740804] FAT-fs (sda1): FAT read failed (blocknr 1)
+    Used Available Use% Mounted on
+none                    381.6M         0    381.6M   0% /dev
+/dev/mmcblk0p7            6.6G    695.4M      5.9G  10% /
+devtmpfs                381.6M         0    381.6M   0% /dev
+tmpfs                   399.4M         0    399.4M   0% /dev/shm
+tmpfs                   399.4M    260.0K    399.1M   0% /tmp
+tmpfs                   399.4M     16.0K    399.3M   0% /run
+df: /udisk: Input/output error
+
 
 
 
