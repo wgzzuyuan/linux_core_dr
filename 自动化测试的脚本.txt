@@ -1,0 +1,85 @@
+ 
+1， RTC的测试。
+echo "======== Display system date ========"
+date
+echo "======== Display rtc date ========"
+hwclock 
+echo "======== Save system date to rtc date ========"
+hwclock -w
+echo "======== Display rtc date ========"
+hwclock
+ 
+
+2， LED的测试
+#!/bin/sh  
+
+echo export pin
+echo 241 > /sys/class/gpio/export 
+echo 225 > /sys/class/gpio/export 
+echo 42 > /sys/class/gpio/export 
+
+echo setting direction to output  
+echo out > /sys/class/gpio/gpio241/direction
+echo out > /sys/class/gpio/gpio225/direction
+echo out > /sys/class/gpio/gpio42/direction
+
+echo setting pin high or low
+
+ON=1
+OFF=0
+while true
+do
+	echo $ON > /sys/class/gpio/gpio241/value
+	echo $ON > /sys/class/gpio/gpio225/value
+	echo $ON > /sys/class/gpio/gpio42/value
+	sleep 1	
+	echo $OFF > /sys/class/gpio/gpio241/value
+	echo $OFF > /sys/class/gpio/gpio225/value
+	echo $OFF > /sys/class/gpio/gpio42/value
+	sleep 1
+done
+
+# cat led.sh 
+#!/bin/sh  
+
+echo export pin
+echo 241 > /sys/class/gpio/export 
+echo 42 > /sys/class/gpio/export 
+  
+echo setting direction to output  
+echo out > /sys/class/gpio/gpio241/direction
+echo out > /sys/class/gpio/gpio42/direction
+  
+echo setting pin high or low
+
+ON=1
+OFF=0
+while true
+do
+	echo $ON > /sys/class/gpio/gpio241/value
+	echo $ON > /sys/class/gpio/gpio42/value
+	sleep 1	
+	echo $OFF > /sys/class/gpio/gpio241/value
+	echo $OFF > /sys/class/gpio/gpio42/value
+	sleep 1
+done
+
+3，串口的测试
+
+
+4，网口测试
+ifconfig
+
+5,wifi的测试
+#!/bin/sh  
+
+wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+sleep 1
+udhcpc -i  wlan0
+
+6，
+
+
+
+ 
+ 
