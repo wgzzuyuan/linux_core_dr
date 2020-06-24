@@ -5,7 +5,7 @@ sysconfig.fex
 2，添加完sysconfig后，编译完是个什么结果，和以前的结果有什么区别？？？
 把这个配置改了后，根据这个配置去把设备树的.dts修改。
 
-
+还要 make menuconfig
 
 
 
