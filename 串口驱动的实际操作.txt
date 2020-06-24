@@ -3,11 +3,22 @@
 sysconfig.fex
 
 2，添加完sysconfig后，编译完是个什么结果，和以前的结果有什么区别？？？
-把这个配置改了后，根据这个配置去把设备树的.dts修改。
+(1)把这个配置改了后，根据这个配置去把设备树的.dts修改。
 
-还要 make menuconfig
+(2)还要 make menuconfig
 
 
+3,linux 内核的配置
+Linux内核的配置有三部组成，分别是Makefile、配置文件和配置工具，
+
+
+
+4，怎么看你的串口添加的结果？？？
+网友半神---回复。
+
+（1）在/dev 目录下看有没有ttyS6
+（2）或者看 devicetree，在目录 /proc/device-tree 中看有没有你要的设备。
+（3）sys 文件系统也可以，/sys/firmware/devicetree/base/aliases
 
 
 
