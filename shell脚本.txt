@@ -1,0 +1,49 @@
+1,   if 语句怎么用？？？
+
+if [ command ]; then
+     符合该条件执行的语句
+fi
+
+[ -c FILE ] 如果 FILE 存在且是一个字符文件则返回为真。
+
+2，   检测4G模块的原理？？？   
+ #插入4G模块会在/dev目录下生成一个"cdc-wdm0"文件
+ 举例如下：
+   if [ -c "/dev/cdc-wdm0" ]; then
+   
+ 虚拟串口的数目不定，但可以确定，4G模块初始化必会转出ttyUSB0串口。只需检查ttyUSB0的存在，就可以判断4G模块是否初始化。
+ 
+ 能过lsusb查看是否可以发现 EC20的模块，
+ root@astar-evb30:/ # lsusb
+lsusb
+Bus 001 Device 002: ID 1a40:0101
+Bus 001 Device 001: ID 1d6b:0002
+Bus 002 Device 001: ID 1d6b:0001
+Bus 003 Device 001: ID 1d6b:0001
+Bus 001 Device 004: ID 2c7c:0125
+Bus 001 Device 003: ID 0bda:8152
+  发现EC20模块的VID与PID已经发现，说明usb device已经被发现，这是很重要的一步；
+   接着查看 ls /dev/ttyUSB*,
+ root@astar-evb30:/ # ls -la /dev/ttyUSB*
+ls -la /dev/ttyUSB*
+crwxrwxrwx system   system   188,   0 1970-01-01 08:00 ttyUSB0
+crwxrwxrwx system   system   188,   1 1970-01-01 08:00 ttyUSB1
+crwxrwxrwx system   system   188,   2 2018-04-19 19:10 ttyUSB2
+crwxrwxrwx system   system   188,   3 2018-04-19 19:10 ttyUSB3
+ 
+3，   4G模块的手册内容？？？  要测试哪些内容？？？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
