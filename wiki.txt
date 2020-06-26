@@ -134,9 +134,10 @@ DRAM simple test OK.
 
 
 
+16，chmod 700 什么意思？？？怎么解读？？？
+r=4，w=2，x=1 
 
-
-
+chmod 700 filename 指的是对文件的一级操作者的权限
 
 
 
