@@ -106,9 +106,13 @@ Linux下是怎么分区的？？？哪些地方对应的home ，哪些地方对�
 
 12，什么是mmc ???
 
+MMC卡（MultiMediaCard）缩写，即多媒体卡
+Linux kernel把mmc,sd以及sdio三者的驱动代码整合在一起，俗称mmc子系统。源码位于drivers/mmc下。
+
+暂时总结为：   多媒体卡。
+
 
 13,
-
 
 
 
