@@ -40,7 +40,41 @@ cat bootargs
 
 
 
+7,启动参数讲解？？？启动参数的内容的结构？？？
 
+这个参数设置要传递给内核的信息，主要用来告诉内核分区信息和根文件系统所在的分区
+
+enforcing=1 earlyprintk=sunxi-uart,0x01c28000 initcall_debug=0 console=ttyS0,115200 loglevel=8 
+root=/dev/mmcblk0p7 init=/init 
+partitions=boot-resource@mmcblk0p2:env@mmcblk0p5:boot@mmcblk0p6:rootfs@mmcblk0p7:UDISK@mmcblk0p1 
+cma=32M vmalloc=384MB mac= wifi_mac= bt_mac= specialstr= androidboot.serialno=<NULL> 
+boot_type=2 androidboot.
+hardware=sun8iw11p1
+
+console=ttyS0,115200（内核启动后的首选控制台）
+
+root=/dev/mmcblk0p7 （对应mtdparts的rootfs分区）
+举例如下：
+注：root=/dev/mmcblk0p7：为什么是0？
+               解：因为root=/dev/mmcblk0p7 对应 mmcblk的第0个分区（rootfs分区）。
+
+
+root:
+      表示根文件系统所在的设备分区
+               例如/dev/mtdblock5表示/dev/mtdblock5为根文件系统对应mtdparts中的rootfs分区
+rootfstype:
+      根文件系统类型，请根据烧写的文件系统类型配置，此处为yaffs2
+
+这个选项需要跟root一起配合使用：
+          一般如果根文件系统是ext2的话，有没有这个选项是无所谓的，
+          但是如果是jffs2,squashfs等文件系统的话，就需要rootfstype指明文件系统的类型，不然会无法挂载根分区.
+             
+总结一下，BOOT的参数都说了哪些内容？？？
+根文件系统参数(内存分区)，文件系统类型，控制台参数。
+
+
+
+8，
 
 
 
