@@ -33,7 +33,12 @@ BOOTLOADER可否理解为FLASH中用户写的一段引导启动的代码？？�
 
 
 
-6，
+6，Linux在哪里看启动参数？？？
+/proc/device-tree/chosen
+
+cat bootargs
+
+
 
 
 
