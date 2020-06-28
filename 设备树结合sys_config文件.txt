@@ -2,6 +2,11 @@
 1,设备树在哪个目录下？？？
 
 
+/linux3.10/arch/arm/boot/dts/   sun8iw10p1.dts
+
+
+2,
+
 
 
 
