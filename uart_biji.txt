@@ -57,6 +57,10 @@ uart6_rx         = port:PA13<3><1><default><default>
 
 在datesheet中直接输入引脚就可以找到。
 
+2，Linux在哪里改时钟？？？
+
+
+
 
 
 
