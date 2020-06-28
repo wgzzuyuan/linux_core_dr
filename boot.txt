@@ -35,8 +35,17 @@ PLL6=600 Mhz,AHB1=200 Mhz, APB1=100Mhz  MBus=400Mhz
 4，在自己的产品上做的时候，不能和开发板上的分区一样，要重新分区，怎么重新分区？？？
 
 
+5，BOOT Linux板子启动过程的信息内容有哪些？？？
+update dtb dram start
+update dtb dram  end
+跟新设备树的DRAM
+
+EnterNormalBootMode sunxi_bmp_display--
+进入正常的BOOT模式，
 
 
+
+6，
 
 
 
