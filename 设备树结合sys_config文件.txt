@@ -4,8 +4,23 @@
 
 /linux3.10/arch/arm/boot/dts/   sun8iw10p1.dts
 
-
-2,
+uart5: uart@01c29400 {
+			compatible = "allwinner,sun8i-uart";
+			device_type = "uart5";
+			reg = <0x0 0x01c29400 0x0 0x400>;
+			interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&clk_uart5>;
+			pinctrl-names = "default", "sleep";
+			pinctrl-0 = <&uart5_pins_a>;
+			pinctrl-1 = <&uart5_pins_b>;
+			uart5_port = <5>;
+			uart5_type = <4>;
+			status = "disabled";
+		};
+    
+ 在sysconfig中确定了是哪个引脚，输出的电平，
+    
+ 2,
 
 
 
