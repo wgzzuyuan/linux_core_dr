@@ -8,7 +8,33 @@ cma=32M vmalloc=384MB mac= wifi_mac= bt_mac= specialstr= androidboot.serialno=<N
 
 ###看BOOT的参数，可以发现，启动的时候用的串口是串口0
 
-2，
+2，启动打印的信息细致的分为哪几个部分？？？
+
+会打印出时钟的信息，说明在BOOT阶段初始化了时钟。
+PLL6=600 Mhz,AHB1=200 Mhz, APB1=100Mhz  MBus=400Mhz
+1.2Ghz的主频。
+1G 的 DDR， 8G的EMMC
+
+
+
+
+
+3，DDR打印报错，但是DDR的驱动部分没有改动，是什么原因？？？
+
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vdd-cpua failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vcc-dram failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vdd-sys failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vdd-cpus failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vcc-lpddr failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vcc-pl failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vcc-io failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vcc-pll failed
+[    0.310520] add_sys_pwr_dm: get ldo name  for id: vcc-pc failed
+[    0.310520] after inited: sys_mask config = 0x0. 
+
+4，在自己的产品上做的时候，不能和开发板上的分区一样，要重新分区，怎么重新分区？？？
+
+
 
 
 
