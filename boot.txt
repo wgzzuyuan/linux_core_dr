@@ -70,7 +70,54 @@ boot,env,system,recovery,cache（存放恢复系统时用的固件），Udisk（
 规划分区，是指在固件包中指明存储设备上的分区个数。
 
 
-12，
+12，如何显示磁盘使用情况？？？
+df 命令
+
+Filesystem           1K-blocks      Used Available Use% Mounted on
+none                    390804         0    390804   0% /dev
+/dev/mmcblk0p7         6903628    711988   6175256  10% /
+devtmpfs                390804         0    390804   0% /dev
+tmpfs                   408940         0    408940   0% /dev/shm
+tmpfs                   408940       252    408688   0% /tmp
+tmpfs                   408940        16    408924   0% /run
+
+
+
+# fdisk -l
+Disk /dev/mmcblk0: 7456 MB, 7818182656 bytes, 15269888 sectors
+954368 cylinders, 1 heads, 16 sectors/track
+Units: cylinders of 16 * 512 = 8192 bytes
+
+Device       Boot StartCHS    EndCHS        StartLBA     EndLBA    Sectors  Size Id Type
+/dev/mmcblk0p1 *  0,0,0       0,0,0         25468928   15368191 4284866560 2043G  b Win95 FAT32
+Partition 1 does not end on cylinder boundary
+/dev/mmcblk0p2    0,0,0       0,0,0            73728     139263      65536 32.0M  6 FAT16
+Partition 2 does not end on cylinder boundary
+/dev/mmcblk0p3    0,0,0       0,0,0                1   25329664   25329664 12.0G  5 Extended
+Partition 3 does not end on cylinder boundary
+/dev/mmcblk0p5    0,0,0       0,0,0           139264     172031      32768 16.0M 83 Linux
+/dev/mmcblk0p6    0,0,0       0,0,0           172032     303103     131072 64.0M 83 Linux
+/dev/mmcblk0p7    0,0,0       0,0,0           303104   25468927   25165824 12.0G 83 Linux
+
+Partition table entries are not in disk order
+Disk /dev/mmcblk0boot1: 4 MB, 4194304 bytes, 8192 sectors
+128 cylinders, 4 heads, 16 sectors/track
+Units: cylinders of 64 * 512 = 32768 bytes
+
+Disk /dev/mmcblk0boot1 doesn't contain a valid partition table
+Disk /dev/mmcblk0boot0: 4 MB, 4194304 bytes, 8192 sectors
+128 cylinders, 4 heads, 16 sectors/track
+Units: cylinders of 64 * 512 = 32768 bytes
+
+Disk /dev/mmcblk0boot0 doesn't contain a valid partition table
+
+
+
+13，df和fdisk 的区别？？？
+df 查看分区使用情况
+fdisk 显示
+
+
 
 
 
