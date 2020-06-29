@@ -45,7 +45,11 @@ EnterNormalBootMode sunxi_bmp_display--
 
 
 
-6，
+6，板子上电时，串口终端打印出来的是什么？？？
+dmesg 几乎所有的外设都在启动信息中涉及到了。
+
+
+7，
 
 
 
