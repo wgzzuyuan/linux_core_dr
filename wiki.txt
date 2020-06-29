@@ -184,7 +184,11 @@ OTA是Over-the-Air的简写，空中下载技术。
 做分区描述
 
 
-5，
+5，scp命令怎么用？？？
+scp wgze@192.169.1.138:/home/wgze/uart.bin ./
+把编译成的bin文件从Linux服务器传到PC
+
+
 
 
 
