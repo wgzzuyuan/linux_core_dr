@@ -170,7 +170,13 @@ linux思想：万物皆文件
 才会有 /dev
 
 
-11，
+11，到底是以/dev 目录下的东西为标准还是以 /proc/devices 中的东西为准判断
+
+
+以 /dev 目录下的东西为准，因为先有 /proc/devices 后有 /dev 
+
+
+12,为什么先有 /proc/devices 后有 /dev ？？？
 
 
 
