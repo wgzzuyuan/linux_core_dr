@@ -52,7 +52,120 @@ and the attributes from one single parent device.
     DRIVERS==""
 
 
-5，
+5，/dev 下只能看到串口的一部分，为什么要在 /proc/devices 下再看？？？
+bai/dev下只是串口的入口，具体设备存在与否需要按关键字（ttyS、ttyUSB、uart）查询/proc/devices以确定。
+
+
+
+6，   当多个串口连接的时候，怎么确定正在连接的是哪个串口？？？
+
+
+
+
+7，/proc 下面放的是什么？？？
+/proc目录是一种文件系统,即proc文件系统。与其它常见的文件系统不同的是,/proc是一种伪文件系统(也即虚拟文件系统)
+
+/proc/devices 可用设备的列表
+
+在这个目录下可以看 有哪些设备是可用的，有哪些串口设备时可用的。
+cat /proc/devices
+
+# cat devices
+Character devices:
+  1 mem
+  2 pty
+  3 ttyp
+  4 /dev/vc/0
+  4 tty
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+  7 vcs
+ 10 misc
+ 13 input
+ 14 sound
+ 21 sg
+ 29 fb
+ 81 video4linux
+ 89 i2c
+108 ppp
+116 alsa
+125 aw_i2c_ts
+128 ptm
+136 pts
+150 cedar_dev
+153 spi
+166 ttyACM
+180 usb
+188 ttyUSB
+189 usb_device
+216 rfcomm
+226 drm
+245 g2d_chrdev
+246 hdmi
+247 roccat
+248 hidraw
+249 ttyGS
+250 ttyS
+251 disp
+252 bsg
+253 watchdog
+254 rtc
+
+Block devices:
+  1 ramdisk
+259 blkext
+  7 loop
+  8 sd
+  9 md
+ 11 sr
+ 65 sd
+ 66 sd
+ 67 sd
+ 68 sd
+ 69 sd
+ 70 sd
+ 71 sd
+128 sd
+129 sd
+130 sd
+131 sd
+132 sd
+133 sd
+134 sd
+135 sd
+179 mmc
+253 device-mapper
+254 mdp
+
+
+
+8，网上提供的测试串口的方法是怎么样的？？？说出一两个关键词？？？
+
+关键词：shell脚本测试。
+
+linux下通过shell命令测试串口 
+
+linux思想：万物皆文件
+串口在linux中以字符型设备存在，名称一般为/dev/tty*
+默认参数一般为9600 8-N-1
+发送：echo “hello” > /dev/tty*
+接收：cat /dev/tty*
+
+
+9，要搞明白串口，首先要搞明白tty 子系统，什么是tty子系统，tty子系统的组成成分有哪些？？？
+
+定义：> tty(/ dev / ttyx) – 代表电传打字机 – 是原始终端(用于输出的行式打印机和用于输入的键盘！).终端基本上只是一个使用文本输入和输出的用户界面设备.
+
+什么是TTY，是电传打印机，是输入和输出设备，是2个设备，不是一个设备。
+
+组成元素：   tty子系统包含:tty核心,tty线路规程和tty驱动。
+
+
+10，
+
+
+
 
 
 
