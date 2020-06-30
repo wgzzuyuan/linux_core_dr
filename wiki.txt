@@ -201,12 +201,19 @@ processor	: 2
 processor	: 3
 
 
-7，
+7，Linux搜索中，“|” 不仅仅是查找，更是缩小范围的一种手段。
+dmesg | grep ttyS
+
+[    1.830095] uart0: ttyS0 at MMIO 0x1c28000 (irq = 33) is a SUNXI
+[    3.102721] console [ttyS0] enabled
+[    3.107419] uart2: ttyS2 at MMIO 0x1c28800 (irq = 35) is a SUNXI
+[    3.114913] uart3: ttyS3 at MMIO 0x1c28c00 (irq = 36) is a SUNXI
+[    3.122219] uart4: ttyS4 at MMIO 0x1c29000 (irq = 49) is a SUNXI
+[    3.129515] uart5: ttyS5 at MMIO 0x1c29400 (irq = 50) is a SUNXI
+[    3.136786] uart7: ttyS7 at MMIO 0x1c29c00 (irq = 52) is a SUNXI
 
 
-
-
-
+8，
 
 
 
