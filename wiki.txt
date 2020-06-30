@@ -188,7 +188,20 @@ OTA是Over-the-Air的简写，空中下载技术。
 scp wgze@192.169.1.138:/home/wgze/uart.bin ./
 把编译成的bin文件从Linux服务器传到PC
 
+6，Linux怎么更细致的查找？？？
 
+以后不单用grep ，把cat 和 grep 一起使用。
+
+cat /proc/cpuinfo| grep "pro"
+
+# cat /proc/cpuinfo| grep "pro"
+processor	: 0
+processor	: 1
+processor	: 2
+processor	: 3
+
+
+7，
 
 
 
