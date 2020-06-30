@@ -185,7 +185,7 @@ linux思想：万物皆文件
   终端2中给串口发数据：cat "hello melissa" > /dev/ttyS0
 
 
-1，怎么测试你的串口是否正常   ？？？
+14，怎么测试你的串口是否正常   ？？？
 
 （1）. 短接 tx 和 rx，让串口自发自收 
 
@@ -196,13 +196,55 @@ linux思想：万物皆文件
 如此一来，如果串口是正常工作的，那么，指令 3 执行完之后，屏幕上会打印出一个 hello，此为该串口自发自收的数据；如果设备已经挂掉了，那么不会有任何反应。
 
 
-2，   为什么把串口连接电脑上的串口助手，打印信息后，串口助手没有显示串口打印出的东西 ？？？
+15，   为什么把串口连接电脑上的串口助手，打印信息后，串口助手没有显示串口打印出的东西 ？？？
 
 
-3，
+16，查看串口的速度信息 ？？？
+stty -F /dev/ttyS2 -a                    串口的speed等信息
 
 
+setserial    /dev/ttyS0                查看串口设备ttyS0是否连接
 
+17，读取数据并保存到txt文本文件中
+读取数据并保存到txt文本文件中，如 
+cat /dev/ttyUSB0 > file.txt 
+
+
+我们设置串口/dev/ttyS0波特率为57600和odd parity，命令如下 
+stty -F /dev/ttyS0 57600 parodd 
+
+
+shell方式
+1.使用minicon -s配置串口并保存； 
+2.使用setserial /dev/ttyUSB0 -a等查看串口配置； 
+3.接收侧cat /dev/ttyUSB0等待串口输出； 
+4.发送测echo “AT+RST\r\n” > /dev/ttyUSB0发送数据。
+
+
+3、查看串口驱动
+   cat/proc/tty/drivers/serial
+   
+   
+4、查看串口设备
+   dmesg | grep ttyS*
+   
+   
+5、查一下板子上的串口有没有设备
+   grep tty/proc/devices
+  如果有ttyS设备，再看/dev/有没有ttyS*，如没有就建立一个：mknod /dev/ttyS0 c 4 64
+  如果板子的设备中没有标准串口设备ttyS0，也没有ttySAC0。/dev下应该有一个USB串口：/dev/ttyUSB0.
+  
+  
+  
+
+PC上的串口一般是ttyS，板子上Linux的串口一般叫做ttySAC
+
+
+串口使用：
+如果需要查看这个串口设备输出
+cat ttyUSB0
+如果需要对这个设备输入
+echo aaaaa>ttyUSB0
 
 
 
