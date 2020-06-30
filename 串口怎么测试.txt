@@ -1,0 +1,34 @@
+1,普通的串口怎么测试？？？
+
+dmesg|grep ttyS*
+[    0.000000] Kernel command line: enforcing=1 earlyprintk=sunxi-uart,0x01c28000 initcall_debug=0 console=ttyS0,115200 loglevel=8 root=/dev/mmcblk0p7 init=/init partitions=boot-resource@mmcblk0p2:env@mmcblk0p5:boot@mmcblk0p6:rootfs@mmcblk0p7:UDISK@mmcblk0p1 cma=32M vmalloc=384MB mac= wifi_mac= bt_mac= specialstr= androidboot.serialno=<NULL> boot_type=2 androidboot.hardware=sun8iw11p1
+[    1.829469] uart0: ttyS0 at MMIO 0x1c28000 (irq = 33) is a SUNXI
+[    3.102139] console [ttyS0] enabled
+[    3.106850] uart2: ttyS2 at MMIO 0x1c28800 (irq = 35) is a SUNXI
+[    3.114296] uart3: ttyS3 at MMIO 0x1c28c00 (irq = 36) is a SUNXI
+[    3.121609] uart4: ttyS4 at MMIO 0x1c29000 (irq = 49) is a SUNXI
+[    3.128924] uart5: ttyS5 at MMIO 0x1c29400 (irq = 50) is a SUNXI
+[    3.136208] uart7: ttyS7 at MMIO 0x1c29c00 (irq = 52) is a SUNXI
+
+
+2，查看串口驱动：cat /proc/tty/drivers/serial
+# cd proc/tty/driver/
+# cat uart
+serinfo:1.0 driver revision:
+0: uart:SUNXI mmio:0x01C28000 irq:33 tx:6756 rx:336 RTS|DTR
+2: uart:SUNXI mmio:0x01C28800 irq:35 tx:22 rx:0
+3: uart:SUNXI mmio:0x01C28C00 irq:36 tx:0 rx:0
+4: uart:SUNXI mmio:0x01C29000 irq:49 tx:0 rx:0
+5: uart:SUNXI mmio:0x01C29400 irq:50 tx:0 rx:0
+7: uart:SUNXI mmio:0x01C29C00 irq:52 tx:0 rx:0
+
+
+3,     Purple light show sharp
+with time and dream ,you can cross time and space.
+
+
+
+
+
+
+
