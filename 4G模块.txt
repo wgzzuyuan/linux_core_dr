@@ -185,7 +185,19 @@ PPP协议一般指PPP。点对点协议（Point to Point Protocol，PPP）
 
 17，Linux下 /proc/devices 文件中的东西和 /dev目录下的东西的关联？？区别？？？
 
+improve efficiency  17:51:30
+一个是虚拟的
 
+improve efficiency  17:51:38
+一个是实际挂载的
+
+1、proc目录是一个虚拟文件系统，可以为linux用户空间和内核空间提供交互
+它只存在于内存中，而不占实际的flash或硬盘空间
+2、/proc/devices/里的设备是加载驱动程序时生成的
+3、/dev/下的设备是通过创建设备节点生成的，用户通过此设备节点来访问内核里的驱动
+
+/proc/devices/中的设备是通过insmod加载到内核的，它可产生一个major供mknod作为参数。
+/dev/*.* 是通过mknod加上去的，格式:mknod device1 c/b major minor 如：mknod dr1 c 254 0，用户通过此设备名来访问你的驱动。
 
 18，
 
