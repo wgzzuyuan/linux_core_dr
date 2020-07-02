@@ -36,6 +36,16 @@ LTE(Long Term Evolution，长期演进)是由 3GPP(The 3rd Generation Partnershi
 中国的4G手机，在中国运行在1900MHz这个频率上，
 
 
+4， 4G模块的上网怎么上？？？
+
+
+5，不要说串口的CTS,RTS，直接说“硬件流控”。------20200702
+
+6，串口的硬件流控需要对应的软件上怎么操作？？？
+
+
+7，
+
 
 
 
