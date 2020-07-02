@@ -48,7 +48,10 @@ LTE(Long Term Evolution，长期演进)是由 3GPP(The 3rd Generation Partnershi
 因为发送端发送数据下一帧数据的时候，接收端还没有来得及处理，下一帧数据就发送过来了，导致前一帧数据的丢失。
 
 8，
+一根叫 CTS(ClearTo Send 为输入信号，一根叫 RTS(Require To Send 为输出信号)。
+一个是接收控制，一个是发送控制。
 
+9，
 
 
 
