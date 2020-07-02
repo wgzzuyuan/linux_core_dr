@@ -60,7 +60,136 @@ RTS 表示了 USART 是否已经准备好接收新的数据了。
 
 
 
-10，
+10， USB串口是个虚拟串口，怎么理解虚拟串口？？？虚拟串口在4G模块中是怎么用的？？？
+
+
+
+11，桥接路由？？？什么意思？？什么功能？？？在什么场合用？？？
+
+
+13，什么是ppp协议？？？
+
+PPP协议一般指PPP。点对点协议（Point to Point Protocol，PPP）
+
+
+14，桥接模式。
+
+
+
+15，几个网口怎么配置桥接？？？
+
+
+16，USB 接口的外设 开机显示的打印信息。
+
+# dmesg|grep usb                                                                                                                                                        
+[    1.071613] usbcore: registered new interface driver usbfs
+[    1.071613] usbcore: registered new interface driver hub
+[    1.071613] usbcore: registered new device driver usb
+[    3.427732] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.435409] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.443435] usb usb1: Product: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.451747] usb usb1: Manufacturer: Linux 3.10.108 ehci_hcd
+[    3.457828] usb usb1: SerialNumber: sunxi-ehci
+[    3.472710] [ehci0-controller]: sunxi_usb_disable_ehci
+[    3.494779] usb usb1: USB disconnect, device number 1
+[    3.570120] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.570127] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.570133] usb usb1: Product: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.570138] usb usb1: Manufacturer: Linux 3.10.108 ehci_hcd
+[    3.570143] usb usb1: SerialNumber: sunxi-ehci
+[    3.697701] usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.705382] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.713405] usb usb2: Product: SW USB2.0 'Enhanced' Host Controller (EHCI) Driver
+[    3.721717] usb usb2: Manufacturer: Linux 3.10.108 ehci_hcd
+[    3.727798] usb usb2: SerialNumber: sunxi-ehci
+[    3.854020] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001
+[    3.861632] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.869515] usb usb3: Product: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    3.877568] usb usb3: Manufacturer: Linux 3.10.108 ohci_hcd
+[    3.883767] usb usb3: SerialNumber: sunxi-ohci
+[    3.898278] [ohci0-controller]: sunxi_usb_disable_ohci
+[    3.920413] usb usb3: USB disconnect, device number 1
+[    3.940045] usb 1-1: new high-speed USB device number 2 using sunxi-ehci
+[    4.044029] usb usb3: New USB device found, idVendor=1d6b, idProduct=0001
+[    4.051643] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.059526] usb usb3: Product: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    4.067590] usb usb3: Manufacturer: Linux 3.10.108 ohci_hcd
+[    4.073788] usb usb3: SerialNumber: sunxi-ohci
+[    4.121676] usb 1-1: New USB device found, idVendor=05e3, idProduct=0608
+[    4.121684] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    4.121689] usb 1-1: Product: USB2.0 Hub
+[    4.224024] usb usb4: New USB device found, idVendor=1d6b, idProduct=0001
+[    4.231637] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    4.239520] usb usb4: Product: SW USB2.0 'Open' Host Controller (OHCI) Driver
+[    4.247577] usb usb4: Manufacturer: Linux 3.10.108 ohci_hcd
+[    4.253769] usb usb4: SerialNumber: sunxi-ohci
+[    4.269064] usbcore: registered new interface driver cdc_acm
+[    4.284443] usbcore: registered new interface driver usblp
+[    4.290788] usbcore: registered new interface driver usb-storage
+[    4.297595] usbcore: registered new interface driver ums-alauda
+[    4.304322] usbcore: registered new interface driver ums-cypress
+[    4.311155] usbcore: registered new interface driver ums-datafab
+[    4.317956] usbcore: registered new interface driver ums_eneub6250
+[    4.324985] usbcore: registered new interface driver ums-freecom
+[    4.331815] usbcore: registered new interface driver ums-isd200
+[    4.338519] usbcore: registered new interface driver ums-jumpshot
+[    4.345442] usbcore: registered new interface driver ums-karma
+[    4.352082] usbcore: registered new interface driver ums-onetouch
+[    4.359010] usbcore: registered new interface driver ums-realtek
+[    4.365877] usbcore: registered new interface driver ums-sddr09
+[    4.372603] usbcore: registered new interface driver ums-sddr55
+[    4.379318] usbcore: registered new interface driver ums-usbat
+[    4.386142] usbcore: registered new interface driver usbserial
+[    4.392776] usbcore: registered new interface driver usbserial_generic
+[    4.400177] usbserial: USB Serial support registered for generic
+[    4.400310] usb 1-1.3: new high-speed USB device number 3 using sunxi-ehci
+[    4.436235] usbcore: registered new interface driver usbtouchscreen
+[    4.515180] usb 1-1.3: New USB device found, idVendor=0bda, idProduct=0179
+[    4.515187] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    4.515192] usb 1-1.3: Product: 802.11n NIC
+[    4.515197] usb 1-1.3: Manufacturer: Realtek
+[    4.515203] usb 1-1.3: SerialNumber: 38A28C45AA6F
+[    4.557239] usbcore: registered new interface driver uvcvideo
+[    4.573027] usbcore: registered new interface driver gspca_zc3xx
+[    4.600448] usb 1-1.4: new high-speed USB device number 4 using sunxi-ehci
+[    4.747246] usb 1-1.4: New USB device found, idVendor=0b95, idProduct=772b
+[    4.754981] usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    4.763094] usb 1-1.4: Product: AX88772B
+[    4.767366] usb 1-1.4: Manufacturer: ASIX Elec. Corp.
+[    4.773113] usb 1-1.4: SerialNumber: 000001
+[    5.100819] usb 1-1.2: new full-speed USB device number 5 using sunxi-ehci
+[    5.252463] usbcore: registered new interface driver usbhid
+[    5.252466] usbhid: USB HID core driver
+[    5.352775] usbcore: registered new interface driver snd-usb-audio
+[    5.781011] usb_serial_number:20080411
+[    5.798759] android_usb gadget: Mass Storage Function, version: 2009/09/11
+[    5.806431] android_usb gadget: Number of LUNs=3
+[    5.830622] android_usb gadget: android_usb ready
+[    7.612764] eth1: register 'asix' at usb-sunxi-ehci-1.4, ASIX AX88772C USB 2.0 Ethernet, 00:0e:c6:87:72:01
+[    7.630656] usbcore: registered new interface driver asix
+[    7.692142] sw_usb_enable_hcd: usbc_num = 1
+[    7.870281] usbcore: registered new interface driver rtl8188eu
+[    7.901886] usbcore: registered new interface driver option
+[    7.908935] usbserial: USB Serial support registered for GSM modem (1-port)
+[   10.260448] usb 1-1.2: device descriptor read/all, error -110
+[   10.340564] usb 1-1.2: new full-speed USB device number 6 using sunxi-ehci
+[   15.450479] usb 1-1.2: device descriptor read/all, error -110
+[   15.530525] usb 1-1.2: new full-speed USB device number 7 using sunxi-ehci
+[   20.560693] usb 1-1.2: device descriptor read/8, error -110
+[   25.690790] usb 1-1.2: device descriptor read/8, error -110
+[   25.880594] usb 1-1.2: new full-speed USB device number 8 using sunxi-ehci
+[   30.910600] usb 1-1.2: device descriptor read/8, error -110
+[   36.040700] usb 1-1.2: device descriptor read/8, error -110
+
+
+
+17，Linux下 /proc/devices 文件中的东西和 /dev目录下的东西的关联？？区别？？？
+
+
+
+18，
+
+
 
 
 
