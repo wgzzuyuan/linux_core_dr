@@ -50,8 +50,18 @@ LTE(Long Term Evolution，长期演进)是由 3GPP(The 3rd Generation Partnershi
 8，
 一根叫 CTS(ClearTo Send 为输入信号，一根叫 RTS(Require To Send 为输出信号)。
 一个是接收控制，一个是发送控制。
+数据线方向与流控线数据方向是相反的
+RTS 表示了 USART 是否已经准备好接收新的数据了。
 
-9，
+主控芯片的发送引脚配对着CTS (清除发送引脚)
+主控芯片的接收引脚配对着RTS (请求发送引脚)
+
+9，串口的CTS 和RTS 在4G模块中是怎么用的？？？
+
+
+
+10，
+
 
 
 
