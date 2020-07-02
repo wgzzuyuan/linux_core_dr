@@ -213,7 +213,14 @@ dmesg | grep ttyS
 [    3.136786] uart7: ttyS7 at MMIO 0x1c29c00 (irq = 52) is a SUNXI
 
 
-8，
+8，怎么看Linux内核的版本？？？
+# uname -r
+3.10.108
+
+
+9，怎么关闭防火墙？？？
+
+
 
 
 
