@@ -1,0 +1,5 @@
+1，  const struct option_blacklist_info *blacklist
+
+指向结构体的指针，此时把 const 放在了*的左边，
+
+
