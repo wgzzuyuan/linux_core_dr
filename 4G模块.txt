@@ -227,7 +227,8 @@ insmod命令-->install module的缩写
 肯定是先加载，后创建节点。
 
 
-
+insmod 的概念是什么？？？
+是加载.ko 模块。
 
 
 
