@@ -199,10 +199,15 @@ improve efficiency  17:51:38
 /proc/devices/中的设备是通过insmod加载到内核的，它可产生一个major供mknod作为参数。
 /dev/*.* 是通过mknod加上去的，格式:mknod device1 c/b major minor 如：mknod dr1 c 254 0，用户通过此设备名来访问你的驱动。
 
-18，
+18，insmod 加载，什么是加载？？？ mk
+
+一般是驱动程序生成设备文件节点
+也可以自己创建文件节点
 
 
+insmod 意思是动态加载，需要的时候加载，不需要的时候不加载。
 
+19，
 
 
 
