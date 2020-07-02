@@ -24,11 +24,20 @@
 7， 什么是多网制式 ？？？
 网络制式就是网络的类型
 
-8，
+中国移动使用的GSM(2G)/TD-SCDMA(3G)/TD-LTE(4G)这3模；
+中国联通使用的是GSM(2G)/WCDMA(3G)/TD-LTE(4G)/FDD-LTE(4G)；
+中国电信使用的是CDMA1X(2G)/EVDO(3G)/TD-LTE(4G)/FDD-LTE(4G)。
+
+8，4G 是什么？？？
 LTE(Long Term Evolution，长期演进)是由 3GPP(The 3rd Generation Partnership Project，第三代合作伙伴计划)组织制定的 UMTS(Universal Mobile Telecommunications System，通用移动通信系统)技术标准的长期演进
+4G就是采用LTE（长期演进）技术进行通信的
+
+9，工业物联网的网关在那个频段上？？？
+中国的4G手机，在中国运行在1900MHz这个频率上，
 
 
-9，
+
+
 
 
 
