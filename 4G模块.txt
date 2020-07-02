@@ -22,9 +22,13 @@
 
 
 7， 什么是多网制式 ？？？
-
+网络制式就是网络的类型
 
 8，
+LTE(Long Term Evolution，长期演进)是由 3GPP(The 3rd Generation Partnership Project，第三代合作伙伴计划)组织制定的 UMTS(Universal Mobile Telecommunications System，通用移动通信系统)技术标准的长期演进
+
+
+9，
 
 
 
