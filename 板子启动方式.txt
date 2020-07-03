@@ -76,6 +76,8 @@ tmpfs                   408940        16    408924   0% /ru
 NC 就是没有画的意思
 
 
+11，STM32的分区指的是地片内的FLASH进行分区，linux 的板子是对NAND FLASH进行分区，或者对EMMC进行分区。
+
 
 
 
