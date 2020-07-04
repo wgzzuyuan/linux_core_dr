@@ -58,7 +58,28 @@ OK
   可以看到哪个分区放文件系统，哪个人去放内核
   
   
+  
+在这些个目录下改 SSH。  
+/usr/local/bin
+/usr/local/etc
+/usr/libexec
+/var/run
+/var/empty/sshd
 
+
+linux中用目录的的属主和属组是什么意思？？？
+
+属主就是Owner啊，属组就是Group
+
+主要关系到权限的问题，Linux的目录也是文件的一种，对Owner，Group和Others的访问权限可以单独设置
+
+cd /var
+
+chown root empty
+
+cd /var/empty
+
+chown root ssh_config
 
 
 
