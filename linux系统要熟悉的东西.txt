@@ -41,7 +41,23 @@
 （4）成功登录后：然后登录板子，板子和其他机器之间传文件用的是SCP命令。
 
 
+ /etc/init.d/S50sshd start
+ Privilege separation user sshd does not exist
+  
+ # adduser sshd
+ 
+# /etc/init.d/S50sshd start                                                                                                                                             
+Starting sshd: /var/empty must be owned by root and not group or world-writable.
+OK
 
+  
+  栋哥：
+  
+  看文件系统中可以看到Linux下的分区
+  
+  可以看到哪个分区放文件系统，哪个人去放内核
+  
+  
 
 
 
