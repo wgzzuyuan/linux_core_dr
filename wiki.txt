@@ -222,6 +222,17 @@ dmesg | grep ttyS
 
 
 
+10, 在Linux下压缩成wendows下格式的压缩包。
+
+zip -r mysql.zip mysql 
+
+
+
+11，
+
+
+
+
 
 
 
