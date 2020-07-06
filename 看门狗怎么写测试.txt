@@ -1,0 +1,26 @@
+1,不会测试，没有思路 ???
+#!/bin/sh
+
+cnt=1
+while [ $cnt -le $1 ] ; do
+        let "cnt++"
+        echo 1 > /dev/watchdog
+        sleep 15
+done
+
+
+
+#!/bin/bash
+i=1
+j=2
+let也是只能做整数运算
+let c=$i+$j                         #（这一行是let的命令格式）
+echo $c
+
+
+2,
+
+
+
+
+
