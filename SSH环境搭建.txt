@@ -6,44 +6,21 @@
  登录步骤：
  
  8，SSH的环境搭建过程？？？
-
-
-
 （1）在板子上搭建为服务器，在电脑上搭建为客户端，然后配置一下服务器端，
-
-
-
 （2）板子上的SSH服务是buildroot编译成固件，直接烧录进去的。客户端win10自带，Linux的话，要自己安装一下。
-
-
-
 （3）登录的时候：登录方式是SSH输入账户和密码。
-
-
-
 （4）成功登录后：然后登录板子，板子和其他机器之间传文件用的是SCP命令。
-
-
-
-
-
-
 
 9,SSH 环境搭建遇到的问题？？？
 
- （1）
+1）
+/etc/init.d/S50sshd start
+Privilege separation user sshd does not exist
 
- /etc/init.d/S50sshd start
-
- Privilege separation user sshd does not exist
-
- （2）
-
+（2）
 # /etc/init.d/S50sshd start                                                                                                                                             
 
-Starting sshd: /var/empty must be owned by root and not group or world-writable.
-
-OK
+Starting sshd: /var/empty must be owned by root and not group or world-writable.OK
 
 （3）linux中用目录的的属主和属组是什么意思？？？
 
@@ -59,7 +36,9 @@ chown root ssh_config
 
 （4）
 最后修改完板子的sshd_config 后一定要重启，而不是直接启动ssh，要不然SSH还是不会成功的传输文件
-
+# /etc/init.d/S50sshd restart
+Stopping sshd: OK
+Starting sshd: OK
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%           SCP传输文件遇到的bug           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
