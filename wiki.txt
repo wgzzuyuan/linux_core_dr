@@ -233,10 +233,14 @@ zip -r mysql.zip mysql
 
 
 12，·总线驱动代码的位置和设备驱动代码的位置分别在哪里？？？
-
+            
 总线驱动目录：driver/busses/
 设备驱动目录： driver/rtc/ 该目录下面都是各种RTC
 
+
+
+13，uart的架构和I2C的架构不一样，这个没有可比性，i2c和spi比较相近。
+uart 驱动 /driver/tty/serial  目录下
 
 
 
