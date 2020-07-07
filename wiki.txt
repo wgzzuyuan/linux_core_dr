@@ -228,7 +228,14 @@ zip -r mysql.zip mysql
 
 
 
-11，
+11，Linux的find 命令后面要找的字符串要不要加“”  ？？？
+
+
+
+12，·总线驱动代码的位置和设备驱动代码的位置分别在哪里？？？
+
+总线驱动目录：driver/busses/
+设备驱动目录： driver/rtc/ 该目录下面都是各种RTC
 
 
 
