@@ -76,10 +76,13 @@ You must change your password now and login again!
 1、更改远端主机时间：date -s '当前时间'；
 2、更改远端主机密码：passwd user；
 
+date -s "2020-07-07"
+# date -s "12:47:00"
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%           SCP传输文件遇到的bug           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
   
-  
+
   
   
   
