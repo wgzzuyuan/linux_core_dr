@@ -7,6 +7,8 @@ const unsigned char *buffer
 
 函数的参数什么时候这么写？？？
 
+2，内核中很多结构体 的声明加了 const 这个关键词，为什么这么用？？？
+
 
 
 
