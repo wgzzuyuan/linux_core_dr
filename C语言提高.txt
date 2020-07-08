@@ -3,3 +3,12 @@
 指向结构体的指针，此时把 const 放在了*的左边，
 
 
+const unsigned char *buffer
+
+函数的参数什么时候这么写？？？
+
+
+
+
+
+
