@@ -1,5 +1,9 @@
 1, ping不通 但是ifocnfig 有显示，什么原因？？？
 
+必须要重新启动一下
+service network restart
+
+
 
 2，
 
