@@ -5,7 +5,13 @@ service network restart
 
 
 
-2，
+2，用示波器测量这个口，没有数据
+MDIO（Management Data Input/Output）
+
+
+3，
+
+
 
 
 
