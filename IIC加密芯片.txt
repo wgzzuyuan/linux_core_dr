@@ -151,6 +151,13 @@ dca-objs 这个应该怎么命名，dca-core.o dca-sysfs.o 这2 个
 目标文件的命名是怎么命名的？？？
 
 
+16，linux 怎么配置内核的设备驱动？？？？
+make ARCH=arm menuconfig   √√√
+ make menuconfig 是错误的  ×××
+ 
+ 
+17，
+
 
 
 
