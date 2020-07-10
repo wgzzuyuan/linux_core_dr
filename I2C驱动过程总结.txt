@@ -6,7 +6,13 @@
 说到底，Kconfig就是配置哪些文件编译，那些文件不用编译。
 
 
-3，
+3， Kconfig 的正确写法
+
+config LSC
+tristate "lsc2110"
+
+
+
 
 
 
