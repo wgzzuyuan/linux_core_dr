@@ -1,0 +1,19 @@
+主设备号-----从下面可以看到：主设备号是89 ，即I2C的主设备号是89
+
+Character devices:
+  1 mem
+  2 pty
+  3 ttyp
+  4 /dev/vc/0
+  4 tty
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+  7 vcs
+ 10 misc
+ 13 input
+ 14 sound
+ 21 sg
+ 29 fb
+ 81 video4linux
+ 89 i2c
