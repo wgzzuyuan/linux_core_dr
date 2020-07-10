@@ -243,6 +243,14 @@ zip -r mysql.zip mysql
 uart 驱动 /driver/tty/serial  目录下
 
 
+2020 07 10
+
+1,grep 和 find 的区别？？？
+grep是查找匹配条件的行，find是搜索匹配条件的文件。
+
+
+
+
 
 
 
