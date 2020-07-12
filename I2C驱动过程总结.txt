@@ -124,6 +124,18 @@ I2C_DutyCycle_16_9：16比9占空比
 
 
 
+1，编译没有生成.ko文件，为什么？？？
+make modules编译驱动模块，只生成.o文件没有.ko文件...这是怎么回事？？？、
+
+有.o 而没有.ko 估计是你把驱动bai编译进内核了
+obj-m += $(KO_NAME).o  //m是编du译成module
+obj-y += $(KO_NAME).o  //y是编译进 kernel   只可以看到.o  不会生成ko
+
+2，
+
+
+
+
 
 
 
