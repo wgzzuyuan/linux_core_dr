@@ -25,12 +25,25 @@ obj $(CONFIG_LSC)  lsc.o
 
 
 
+
+
+dmesg |tail                                        
+[  605.800335] libphy: 1c50000.eth-0:01 - Link is Down
+[  608.800248] libphy: 1c50000.eth-0:01 - Link is Up - 100/Full
+[  620.800336] libphy: 1c50000.eth-0:01 - Link is Down
+[  622.800328] libphy: 1c50000.eth-0:01 - Link is Up - 100/Full
+[  828.800493] libphy: 1c50000.eth-0:01 - Link is Down
+[  829.800554] libphy: 1c50000.eth-0:01 - Link is Up - 100/Full
+[ 1798.725195] lsc: version magic '3.10.108 SMP mod_unload modversions ARMv7 p2v8 ' should be '3.10.65 SMP preempt mod_unload ARMv7 p2v8 '
+[ 1798.725846] lsc: version magic '3.10.108 SMP mod_unload modversions ARMv7 p2v8 ' should be '3.10.65 SMP preempt mod_unload ARMv7 p2v8 '
+[ 2571.195056] lsc: version magic '3.10.108 SMP mod_unload modversions ARMv7 p2v8 ' should be '3.10.65 SMP preempt mod_unload ARMv7 p2v8 '
+[ 2571.195723] lsc: version magic '3.10.108 SMP mod_unload modversions ARMv7 p2v8 ' should be '3.10.65 SMP preempt mod_unload ARMv7 p2v8 '
+# 
+
+
 2，怎么选中  make menuconfig
 Y是选择,N为删除,M为编译成模块。
 用按键操作
-
-
-3，
 
 
 
