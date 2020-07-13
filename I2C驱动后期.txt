@@ -20,7 +20,7 @@ obj $(CONFIG_LSC)  lsc.o
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%加噪编译好的模块到内核%%%%%%%%%%%%%%%%%%%%
-1.格式错误
+1.insmod: can't insert 'led.ko': invalid module format    格式错误
 原因：内核版本不一致
 
 
