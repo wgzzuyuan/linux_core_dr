@@ -1,0 +1,25 @@
+1,I2C 板子中的 /proc/devoces 文件的作用是什么？？？
+
+查看设备的主设备号
+
+
+2，模块的初始化函数的功能是怎么被实现的？？？
+module_init(motor_init);
+module_exit(motor_exit);
+
+3，为啥你没有生成 .o  或者 .ko 文件？？？
+obj -y   生成.o文件
+obj -m   生成.ko文件
+
+把你单个的模块文件下面的Makefile ，
+只写一行：obj -m lsc.o
+
+obj $(CONFIG_LSC)  lsc.o
+
+如果是这样的话，表示什么意思，是直接生成.o文件，那么是怎么生成.o文件的？？？
+
+
+
+
+
+
