@@ -27,6 +27,12 @@ obj $(CONFIG_LSC)  lsc.o
 
 2，怎么选中  make menuconfig
 Y是选择,N为删除,M为编译成模块。
+用按键操作
+
+
+3，
+
+
 
 
 
