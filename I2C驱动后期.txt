@@ -109,7 +109,13 @@ proc_fops:表示对这个文件节点进行读写操作的函数的结构体；
 （3）调用内核函数sysfs_create_file(struct kobject *hellowold_kobj， struct kobj_attribute hello_value_attribute); 去创建文件节点，节点对应的读写函数，分别为show(),store()函数；
 
 
+2，设备树和.ko的关系？？？
 
+.ko这种驱动不是通过设备树添加的，这种就是用的时候挂载上，不用的时候卸载。
+
+
+
+3，
 
 
 
