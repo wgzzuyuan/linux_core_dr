@@ -87,7 +87,58 @@ class create 是在sys/class/ 创建一个目录
 节点的存在：
 每个设备在 /dev 目录下都有一个对应的文件(节点)。
 
-5，今天早晨没有休息好，以后自己要把自己的休息搞好，要不然就很凉凉。
+5，linxu 下/dev 目录下的节点是怎么来的？？？
 
-                                        
+三种Linux下如何创建设备节点的方法：
+
+
+（1）/sys/class/下面某个目录下创建hello这个节点，可以通过调用以下函数：
+示例：static DEVICE_ATTR(hello, S_IRUGO | S_IWUSR, hello_read, hello_wirte);
+
+第一个参数：要创建的节点名字；
+第二个参数：创建节点的权限；
+第三个参数：向/sys/class/xxx/hello节点读取数据的时候，调用这个函数指针参数(读函数名称)；
+第四个参数：向/sys/class/xxx/hello节点写入数据的时候，调用这个函数指针参数(写函数名称)；
+
+（2）/proc目录下创建文件节点，可调用内核中的创建函数：
+示例：struct proc_dir_entry *proc_create(const char *name, umode_t mode, struct proc_dir_entry *parent, const struct file_operations *proc_fops)
+name: 表示要创建的节点名字；
+mode: 表示创建节点的权限；
+parent: 父entry，为NULL的话，默认父entry是/proc；
+proc_fops:表示对这个文件节点进行读写操作的函数的结构体；
+（3）调用内核函数sysfs_create_file(struct kobject *hellowold_kobj， struct kobj_attribute hello_value_attribute); 去创建文件节点，节点对应的读写函数，分别为show(),store()函数；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
