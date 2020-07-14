@@ -55,5 +55,25 @@ axp20    axp22    dummy    hm5065   lkt_i2c
 
 2，
 
+linux 下 sys 文件夹
+内存文件系统 proc ，dev， sys目录。
+proc 是进程相关的文件
+dev 目录存放的是设备节点，通过对应的文件就能找到相应的设备。
+比如char 就是各种字符设备文件。
+
+class create 是在sys/class/ 创建一个目录
+而device_create 是在/sys/class/下创建一个设备文件。
+
+这个时候由udev这个应用程序 检测到sys/class/ 有目录 有设备文件，就会在 dev 目录下创建一个同名的设备文件。
+通过sys目录下对应的文件 可以直接操作驱动，进而操作硬件。
+通过cat echo 可以读取和进行操作硬件。
+
+
+
+
+通过sys目录下对应的文件 可以直接操作驱动，进而操作硬件。
+通过cat echo 可以读取和进行操作硬件。
+
+
 
 
