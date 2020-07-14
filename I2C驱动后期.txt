@@ -135,7 +135,28 @@ proc_fops:表示对这个文件节点进行读写操作的函数的结构体；
 ————————————————
 
 
-4，
+4，编译不过，显示 autoconfig 错误，什么原因？？？
+autoconf.texi:8380: must be after `@defmac' to use `@defmacx'
+conftest.c:4597: must be after `@defmac' to use `@defmacx'
+conftest.c:15929: must be after `@defmac' to use `@defmacx'
+Makefile:251: recipe for target 'autoconf.info' failed
+make[4]: *** [autoconf.info] Error 1
+Makefile:357: recipe for target 'all-recursive' failed
+make[3]: *** [all-recursive] Error 1
+Makefile:292: recipe for target 'all' failed
+make[2]: *** [all] Error 2
+package/pkg-generic.mk:216: recipe for target '/home/wgze/yza0i/out8iw11p1nux/commonildrootild/host-autoconf-2.69/.stamp_built' failed
+make[1]: *** [/home/wgze/yza0i/out8iw11p1nux/commonildrootild/host-autoconf-2.69/.stamp_built] Error 2
+Makefile:76: recipe for target '_all' failed
+make: *** [_all] Error 2
+make: Leaving directory '/home/wgze/yza0iildroot-201611'
+
+
+解决方法：
+删除out 目录下sunxi80iw
+
+重新编译需要为什么可以？？？
+
 
 
 
