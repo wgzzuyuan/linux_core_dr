@@ -2,8 +2,33 @@
 NFS网络文件系统.txt
 
 
-2，
+2，NFS环境搭建过程---亲手实战。
 
 
+一、搭建NFS
+1、执行命令：sudo apt-get install nfs-kernel-server
+2、执行命令：mkdir -p /opt/FriendlyARM/mini210/linux/rootfs_mini210 建立一个nfs服务的专有的文件夹
+# chmod 777 /opt/FriendlyARM/mini210/linux/rootfs_mini210
+3、建立好文件夹后，接着执行命令：sudo vim /etc/exports 配置nfs
+4、在最后一行添加：
+
+/opt/FriendlyARM/mini210/linux/rootfs_mini210 *(sync,rw,no_root_squash)
+这一行的含义是：
+/opt/FriendlyARM/mini210/linux/rootfs_mini210：与nfs服务客户端共享的目录，这个路径必须和你前面设置的文件的路径一致！
+*：允许所有的网段访问，也可以使用具体的IP
+rw：挂接此目录的客户端对该共享目录具有读写权限
+sync：资料同步写入内存和硬盘
+no_root_squash：root用户具有对根目录的完全管理访问权限。
+no_subtree_check：不检查父目录的权限。更多的参数说明我在文章下面贴出来了！
+5、修改完上述配置文件保存退出。
+6、执行命令：
+# /etc/init.d/rpcbind restart 
+重启rpcbind服务。
+7、执行命令： 
+# /etc/init.d/nfs-kernel-server restart
+重启nfs服务。
+# mkdir /mnt/nfs
+# mount 192.168.1.101:/opt/FriendlyARM/mini210/linux/rootfs_mini210 /mnt/nfs
+# ls /mnt/nfs
 
 
