@@ -8,7 +8,22 @@ ioctl
 
 int ioctl(int fd, ind cmd, …)；
 cmd是用户程序对设备的控制命令，至于后面的省略号，那是一些补充参数，
+函数功能：发送命令
+函数返回值：成功，返回；失败，返回-EINVAL(非法参数)；
+
 
 ioctl 的原理是根据命令对IO口进行管理，
+
+ioctl(fd,FIONREAD,&size);
+FIONREAD ： 通过由ioctl的第三个参数指向的整数返回当前在本套接口接收缓冲区中的字节数。本特性同样适用于文件，管道和终端。
+
+
+  int size=0;
+	ioctl(fd,FIONREAD,&size);
+这个函数的功能是什么？？？
+
+是发送命令
+
+一定要用一下，这次，实战使用过程如下：
 
 
