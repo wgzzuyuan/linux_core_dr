@@ -49,6 +49,10 @@ ifconfig eth0 192.168.0.200 netmask 255.255.255.0 up
 执行挂载：mount -t nfs -o nolock [服务器IP地址]:[共享目录路径] [本机用于挂载的路径]；例如：mount -t nfs -o nolock 192.168.1.123:/home/zefin/nfsShare /mnt即：挂载成功后，访问本地/mnt目录时即是访问服务端的/home/zefin/nfsShare的目录。
 
 
+怎么看虚拟机端的NFS是否配置成功？？？
+进入你挂载的源目录  和被挂载的目录
+这2个地方的东西一样，表示虚拟机上配制好了。开发板需要配置
+
 
 
 
