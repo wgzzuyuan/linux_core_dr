@@ -43,6 +43,13 @@ vi /etc/profile
 ifconfig eth0 192.168.0.200 netmask 255.255.255.0 up
 
 
+挂载
+
+执行showmount -e [服务器IP地址]可以查看服务器开放了哪些共享目录；例如：showmount -e 192.168.1.123
+执行挂载：mount -t nfs -o nolock [服务器IP地址]:[共享目录路径] [本机用于挂载的路径]；例如：mount -t nfs -o nolock 192.168.1.123:/home/zefin/nfsShare /mnt即：挂载成功后，访问本地/mnt目录时即是访问服务端的/home/zefin/nfsShare的目录。
+
+
+
 
 
 
