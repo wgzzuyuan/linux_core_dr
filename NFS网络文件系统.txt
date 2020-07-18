@@ -51,12 +51,14 @@ ifconfig eth0 192.168.0.200 netmask 255.255.255.0 up
 
 怎么看虚拟机端的NFS是否配置成功？？？
 进入你挂载的源目录  和被挂载的目录
-这2个地方的东西一样，表示虚拟机上配制好了。开发板需要配置
+这2个地方的东西一样，表示虚拟机上配制好了。
 
 
 
 
+开发板需要配置如下：
 
+mount -t nfs -o nolock 192.168.1.110:/opt/FriendlyARM/mini210/linux/rootfs_mini210 /mnt/nfs/
 
 
 
