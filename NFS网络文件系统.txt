@@ -38,6 +38,10 @@ no_subtree_check：不检查父目录的权限。更多的参数说明我在文�
 为什么ping不同虚拟机和板子时，把电脑断网了，就可以ping通了。
 
 
+开发便设置静态IP地址
+vi /etc/profile
+ifconfig eth0 192.168.0.200 netmask 255.255.255.0 up
+
 
 
 
