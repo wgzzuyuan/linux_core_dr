@@ -57,10 +57,15 @@ ifconfig eth0 192.168.0.200 netmask 255.255.255.0 up
 
 
 开发板需要配置如下：
-
+开发板需要执行命令：
 mount -t nfs -o nolock 192.168.1.110:/opt/FriendlyARM/mini210/linux/rootfs_mini210 /mnt/nfs/
 
 
+以下是开发板端的配置：
+cat /etc/init.d/rcS
+
+focnfig eth1 192.168.1.144
+mount -n -o nolock 192.168.1.110:/opt/FriendlyARM/mini210/linux/rootfs_mini210 /mnt/
 
 
 
