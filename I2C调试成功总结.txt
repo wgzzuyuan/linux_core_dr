@@ -5,7 +5,7 @@
 在系统初始化的时候，就直接调用了这个函数
 
 3,insmod 的时候，调用的是总线驱动还是设备驱动？？？
-
+insmod 和 module_init 的联系===当你insmod 的时候，调用module_init 函数，注册设备驱动
 
 
 
