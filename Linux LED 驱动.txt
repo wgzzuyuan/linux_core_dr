@@ -17,6 +17,9 @@ G23,G24 不是引脚，是 IO 口。
 
 
 
+gpiolib.c 和 gpio-xunxi.c 的区别？？？
+
+
 
 
 
