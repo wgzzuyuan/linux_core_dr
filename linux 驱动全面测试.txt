@@ -34,10 +34,13 @@ mount /dev/sda2 /media
 7，WIFI PING外网ping不通什么原因？？？
 WIFI要PING 百度成功，需要配置一下自己的网关，然后启动WIFI，设置一下你的WIFI，你网卡启动后，自动连接哪个WIFI。
 
+这一步是WIFI获取其他网络的IP地址并且连接。
 
+udhcpc -i wlan0
 
+udhcpc 功能：动态获取IP
 
-8，ping 的时候，制定接口，可以具体的指定是eth0，eth1,wlan0。
+8，ping 的时候，指定接口，可以具体的指定是eth0，eth1,wlan0。
 
 # ping -I wlan0 www.baidu.com
 
