@@ -32,7 +32,13 @@ mount /dev/sda2 /media
 
 
 7，WIFI PING外网ping不通什么原因？？？
-WIFI要PING 百度成功，需要配置一下自己的网关，然后启动WIFI，设置一下你的WIFI，你网卡启动后，自动连接哪个WIFI。
+直接把有线网屏蔽掉之后，就可以ping通，可见，网络通不通，主要看是不是冲突了。
+
+
+
+
+8，WIFI 测试的过程
+WIFI要PING 百度成功，设置一下你的WIFI，启动WIFI，然后动态获取IP，你网卡启动后，自动连接那个WIFI。
 
 这一步是WIFI获取其他网络的IP地址并且连接。
 
