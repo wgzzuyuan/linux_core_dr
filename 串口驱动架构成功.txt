@@ -19,11 +19,26 @@
 
 
 
-怎么看哪个是GND ,直接测量阻抗
+怎么看哪个是GND ,直接测量阻抗======周岱
 
 
 
+6，   怎么查看中断？？？ 很明显，在下面看到了uart 中断
+cat /proc/interrupts 
+           CPU0       CPU1       CPU2       CPU3       
+ 29:      21533       1188       1066       8782       GIC  arch_timer
+ 30:          0          0          0          0       GIC  arch_timer
+ 32:          0          0          0          0       GIC  axp22_irq_chip
+ 33:        218          0          0          0       GIC  uart0
+ 37:          0          0          0          0       GIC  RemoteIR_RX
+ 39:      22080          0          0          0       GIC  twi0
+ 40:         94          0          0          0       GIC  twi1
+ 41:         18          0          0          0       GIC  twi2
+ 44:          0          0          0          0       GIC  spi2
+ 54:      47199          0          0          0       GIC  sunxi_timer
 
 
+
+7，
 
 
