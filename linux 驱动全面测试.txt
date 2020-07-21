@@ -9,11 +9,34 @@ ping 外网ping不通的原因
       设置DNS：我们打开vim对/etc/resolv.conf进行相关的配置  
       
       
-3，  默认网关是 eth0 
+3，  默认网关是 eth0 ------第一个是默认网关
+看路由的时候一定要加 -n ，
 
+root@qiyang:~# route -n
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 0.0.0.0         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
 192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
 192.168.2.0     0.0.0.0         255.255.255.0   U     0      0        0 eth1
+
+
+4，如何添加 ，删除 网关的配置
+route add default gw 192.168.1.1，
+
+
+
+5，挂载U盘到 media 目录下的命令： mount 源目录  目的目录
+mount /dev/sda2 /media
+
+6，WIFI ping不通网关什么原因？？？
+因为WIFI和eth0 的IP冲突了，在抢网关。
+
+
+7，WIFI PING外网ping不通什么原因？？？
+
+
+
+8，
+
+
 
 
