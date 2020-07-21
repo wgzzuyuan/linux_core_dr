@@ -1,0 +1,19 @@
+cd /sys/class/leds/
+
+
+ping 外网ping不通的原因  
+1，   网关的设置，其命令如下：route add default gw 192.168.21.1 
+
+2，   对域名进行相关的ping看看，能否达到我们实现的效果  
+      显然我们是无法对于域名进行ping的，这是由于我们这里需要进行对于DNS的设置
+      设置DNS：我们打开vim对/etc/resolv.conf进行相关的配置  
+      
+      
+3，  默认网关是 eth0 
+
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.2.0     0.0.0.0         255.255.255.0   U     0      0        0 eth1
+
+
