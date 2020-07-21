@@ -35,8 +35,8 @@ mount /dev/sda2 /media
 
 
 
-8，
+8，ping 的时候，制定接口，可以具体的指定是eth0，eth1,wlan0。
 
-
+# ping -I wlan0 www.baidu.com
 
 
