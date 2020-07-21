@@ -32,6 +32,8 @@ mount /dev/sda2 /media
 
 
 7，WIFI PING外网ping不通什么原因？？？
+WIFI要PING 百度成功，需要配置一下自己的网关，然后启动WIFI，设置一下你的WIFI，你网卡启动后，自动连接哪个WIFI。
+
 
 
 
