@@ -7,6 +7,21 @@
   
 3， 今天先看看怎么测试？？？ IO 口怎么测试？？？
 
+运行程序 
+		发送./test_485 /dev/ttySAC1 1
+		接收./test_485 /dev/ttySAC1 0
+		
+4，  shell 执行命令的时候，显示的" ./脚本名.sh 参数1 参数2" 的原理是怎么写的？？？
+
+
+
+5，void main(int argc, char* argv[])
+
+
+
+怎么看哪个是GND ,直接测量阻抗
+
+
 
 
 
