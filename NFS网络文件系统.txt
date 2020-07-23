@@ -70,6 +70,10 @@ mount -n -o nolock 192.168.1.110:/opt/FriendlyARM/mini210/linux/rootfs_mini210 /
 
 
 
+怎么ping包长,ping 大包 -l 包长
+ping 192.168.1.122 -l 60000
+指定包长为60000
+
 
 
 
