@@ -1,0 +1,36 @@
+1，sprintf 怎么用的？？？
+	sprintf(buff,"yuzhen uart test count:%d\n",i++);
+	printf(">>>>>> %s",buff);
+  
+  直接把一个格式放到一个缓冲中，然后把这个缓冲打印出来。
+  
+  
+2，
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
