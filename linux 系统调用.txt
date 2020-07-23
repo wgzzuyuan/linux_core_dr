@@ -27,3 +27,22 @@ FIONREAD ： 通过由ioctl的第三个参数指向的整数返回当前在本�
 一定要用一下，这次，实战使用过程如下：
 
 
+
+FD_ZERO(&rdfds);   
+FD_SET(0,&rdfds);
+FD_SET(fd, &rdfds);
+ret = select(maxfd + 1, &rdfds, NULL, NULL, &tv);
+
+
+FD_SET(rsfd, &fdR )用于在文件描述符集合中增加一个新的文件描述符。
+
+FD_ISSET(fd, &rdfds)
+
+FD_ISSET(0, &rdfds)
+
+
+
+
+
+
+
