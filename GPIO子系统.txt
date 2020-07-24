@@ -36,6 +36,10 @@ GPIO申请函数和赋值
 全职科技的驱动把底层的驱动基本没有什么变化，要靠应用层来进行复杂的控制，基本没用什么ioctl
 
 
+linuxGPIO申请函数和赋值函数
+– gpio_request – gpio_set_value
+
+
 
 
 
