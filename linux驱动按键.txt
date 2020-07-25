@@ -23,6 +23,8 @@ linux 下的按键驱动和STM32下的区别，
 # cat /sys/class/gpio/gpio271/value 
 0
 
+https://www.cnblogs.com/lxyd/p/9671673.html
+
 
 
 
