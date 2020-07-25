@@ -11,7 +11,17 @@ linux 下的按键驱动和STM32下的区别，
 内检测到了电平的变化，那就开始reset，如果8秒内都没有松手，那就直接进入reboot。
 
 
-4，
+4，测试复位按键过程：
+
+# echo 271 > /sys/class/gpio/export
+# echo in > /sys/class/gpio/gpio271/direction
+# echo both edge
+# cat /sys/class/gpio/gpio271/value 
+1
+
+按下按键后，再次输入命令查看，value的值
+# cat /sys/class/gpio/gpio271/value 
+0
 
 
 
