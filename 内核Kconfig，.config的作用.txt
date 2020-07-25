@@ -9,8 +9,10 @@
 
 在Kconfig中的添加HELLO，然后查看menuconfig
 
-3，
-
+3，menuconfig ，Kconfig ，  
+在Kconfig中的添加HELLO，然后查看menuconfig
+• 配置和裁减HELLO的驱动，查看.config文件的变化
+• 将HELLO定义为“tristate”，可选为“M”状态
 
 
 
