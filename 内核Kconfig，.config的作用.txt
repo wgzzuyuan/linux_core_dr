@@ -4,3 +4,13 @@
 分布在各目录下的Kconfig构成了一个分布式的内核配置数据库，每个Kconfig分别描述了所属目录源文件相关的内核配置菜单。在内核配置make menuconfig(或xconfig等)时，
 从Kconfig中读出配置菜单，用户配置完后保存到.config(在顶层目录下生成)中。在内核编译时，主Makefile调用这个.config，就知道了用户对内核的配置情况。
 
+
+2，Kconfig 和make menuconfig 的区别和联系？？？
+
+在Kconfig中的添加HELLO，然后查看menuconfig
+
+3，
+
+
+
+
