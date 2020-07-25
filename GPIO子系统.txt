@@ -58,6 +58,19 @@ PM_BASE 384
 PN_BASE 416
 PO_BASE 448
 
+例子中GPIO配置参数说明：（例子配置仅说明参数意义，不具备实际配置参考）
+参数1：指向哪个PIO控制器，CPU域的GPIO使用&pio, CPUS域的GPIO使用&r_pio
+参数2：指明哪个bank，（PA/PB/PC/...）
+参数3：指明bank内索引号.
+参数4：指明复用功能（0-GPIO IN; 1-GPIO_OUT 6-INTERRUPT）
+参数5：指明上下拉配置
+参数6：指明驱动力配置
+参数7：指明电平配置
+
+
+
+5,
+
 
 
 
