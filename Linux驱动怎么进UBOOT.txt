@@ -9,7 +9,8 @@
 免去修改 lichee\tools\pack\chips\sun7i\configs\android\default\env.cfg 中的 bootdelay = n (n > 0)，和重新
 打包麻烦。
 
-
+======= 全志科技的板子进入UBOOT的方式有2种，一种是修改lichee\tools\pack\chips\sun7i\configs\android\default\env.cfg 中的 bootdelay = n (n > 0)，
+另一种是在上电前按着 S 按键。
 
 
 
