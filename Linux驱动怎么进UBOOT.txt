@@ -1,6 +1,15 @@
 1, 看延时时间，如果延时时间设置的是0，那么久进不了，如果延时设置的是5s，或者是几秒，那就可以进UBOOT
 
 
+来自全志科技的 UBOOT 的手册：
+进入 uboot 命令行
+当 bootdelay = 0 时直接进入内核，而等待时间进入 uboot 命令行。可以如下操作：
+4、先连接好 PC 端和 A20 设备串口线，将对应的串口端口配置好；
+5、按住 pc 端键盘字母键“s”，上电启动 A20 设备,可以不重新设置等待时间进入 uboot 命令行。
+免去修改 lichee\tools\pack\chips\sun7i\configs\android\default\env.cfg 中的 bootdelay = n (n > 0)，和重新
+打包麻烦。
+
+
 
 
 
