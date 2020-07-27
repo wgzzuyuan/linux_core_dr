@@ -14,4 +14,228 @@
 
 
 
+fdt - flattened device tree utility commands Usage: 
+fdt addr [-c] <addr> [<length>] - Set the [control] fdt location to <addr> 
+fdt move <fdt> <newaddr> <length> - Copy the fdt to <addr> and make it active fdt resize - Resize fdt to size + padding to 4k addr fdt print <path> [<prop>] - Recursive print starting at <path> 
+fdt list <path> [<prop>] - Print one level starting at <path> 
+fdt get value <var> <path> <prop> - Get <property> and store in <var> 
+fdt get name <var> <path> <index> - Get name of node <index> and store in <var> 
+fdt get addr <var> <path> <prop> - Get start address of <property> and store in <var> 
+fdt get size <var> <path> [<prop>] - Get size of [<property>] or num nodes and store in <var> 
+fdt set <path> <prop> [<val>] - Set <property> [to <val>] 
+fdt mknode <path> <node> - Create a new node after <path> 
+fdt rm <path> [<prop>] - Delete the node or <property> 
+fdt header - Display header info fdt bootcpu <id> - Set boot cpuid 
+fdt memory <addr> <size> - Add/Update memory node fdt rsvmem print - Show current mem reserves 
+fdt rsvmem add <addr> <size> - Add a mem reserve fdt rsvmem delete <index> - Delete a mem reserves 
+fdt chosen [<start> <end>] - Add/update the /chosen branch in the tree <start>/<end> - initrd start/end addr 
+fdt save - write fdt to flash
+
+
+其中常用的命令就是 fdt list 和 fdt set 
+Fdt list 用来查询节点配置 
+Fdt set 用来修改节点配置
+
+用如下 命令可以查看系统中别名的配置情况：
+
+sunxi#fdt list /aliases
+aliases {
+	serial0 = "/soc@01c00000/uart@01c28000";
+	serial1 = "/soc@01c00000/uart@01c28400";
+	serial2 = "/soc@01c00000/uart@01c28800";
+	serial3 = "/soc@01c00000/uart@01c28c00";
+	serial4 = "/soc@01c00000/uart@01c29000";
+	serial5 = "/soc@01c00000/uart@01c29400";
+	serial6 = "/soc@01c00000/uart@01c29800";
+	serial7 = "/soc@01c00000/uart@01c29c00";
+	twi0 = "/soc@01c00000/twi@0x01c2ac00";
+	twi1 = "/soc@01c00000/twi@0x01c2b000";
+	twi2 = "/soc@01c00000/twi@0x01c2b400";
+	twi3 = "/soc@01c00000/twi@0x01c2b800";
+	twi4 = "/soc@01c00000/twi@0x01c2c000";
+	ir0 = "/soc@01c00000/ir@01c21800";
+	ir1 = "/soc@01c00000/ir@01c21c00";
+	spi0 = "/soc@01c00000/spi@01c05000";
+	spi1 = "/soc@01c00000/spi@01c06000";
+	spi2 = "/soc@01c00000/spi@01c17000";
+	spi3 = "/soc@01c00000/spi@01c1F000";
+	global_timer0 = "/soc@01c00000/timer@1c20c00";
+	cci0 = "/soc@01c00000/cci@0x01cb3000";
+	csi_res0 = "/soc@01c00000/csi_res@0x01c09000";
+	csi_res1 = "/soc@01c00000/csi_res@0X01c1d000";
+	vfe0 = "/soc@01c00000/vfe@0";
+	vfe1 = "/soc@01c00000/vfe@1";
+	mmc0 = "/soc@01c00000/sdmmc@01c0f000";
+	mmc2 = "/soc@01c00000/sdmmc@01C11000";
+	nand0 = "/soc@01c00000/nand0@01c03000";
+	disp = "/soc@01c00000/disp@01000000";
+	lcd0 = "/soc@01c00000/lcd0@01c0c000";
+	pwm = "/soc@01c00000/pwm@01c23400";
+	tv0 = "/soc@01c00000/tv0@01c94000";
+	tv1 = "/soc@01c00000/tv1@01c98000";
+	hdmi = "/soc@01c00000/hdmi@01ee0000";
+	tvd = "/soc@01c00000/tvd@01c30000";
+	boot_disp = "/soc@01c00000/boot_disp";
+	charger0 = "/soc@01c00000/twi@0x01c2ac00/pmu@0/charger@0";
+	regulator0 = "/soc@01c00000/twi@0x01c2ac00/pmu@0/regulator@0";
+};
+
+
+根据上述的别名可以具体的查看 I2C0 的信息，如下：
+
+
+sunxi#fdt list twi0 
+twi@0x01c2ac00 {
+	#address-cells = <0x00000001>;
+	#size-cells = <0x00000000>;
+	compatible = "allwinner,sun8i-twi";
+	device_type = "twi0";
+	reg = <0x00000000 0x01c2ac00 0x00000000 0x00000400>;
+	interrupts = <0x00000000 0x00000007 0x00000004>;
+	clocks = <0x00000031>;
+	clock-frequency = <0x00061a80>;
+	pinctrl-names = "default", "sleep";
+	pinctrl-1 = <0x00000033>;
+	status = "okay";
+	pinctrl-0 = <0x000000d7>;
+	pmu@0 {
+	};
+};
+
+
+5，什么是 soc 目录 ？？？
+sunxi#fdt list /soc
+
+
+
+
+6，修改整数配置
+
+sunxi#fdt list /wlan
+wlan {
+	compatible = "allwinner,sunxi-wlan";
+	clocks = <0x000000ce>;
+	wlan_busnum = <0x00000002>;
+	wlan_clk_gpio = <0x0000007b 0x00000008 0x0000000c 0x00000004 0x00000000 0x00000000 0x00000000>;
+	status = "disabled";
+	device_type = "wlan";
+};
+sunxi#fdt set /wlan wlan_busnum <0x3>
+sunxi#
+sunxi#
+sunxi#fdt list /wlan
+wlan {
+	compatible = "allwinner,sunxi-wlan";
+	clocks = <0x000000ce>;
+	wlan_busnum = <0x00000003>;
+	wlan_clk_gpio = <0x0000007b 0x00000008 0x0000000c 0x00000004 0x00000000 0x00000000 0x00000000>;
+	status = "disabled";
+	device_type = "wlan";
+};
+
+7， 修改字符串配置：
+
+sunxi#fdt list twi0
+twi@0x01c2ac00 {
+	#address-cells = <0x00000001>;
+	#size-cells = <0x00000000>;
+	compatible = "allwinner,sun8i-twi";
+	device_type = "twi0";
+	reg = <0x00000000 0x01c2ac00 0x00000000 0x00000400>;
+	interrupts = <0x00000000 0x00000007 0x00000004>;
+	clocks = <0x00000031>;
+	clock-frequency = <0x00061a80>;
+	pinctrl-names = "default", "sleep";
+	pinctrl-1 = <0x00000033>;
+	status = "okay";
+	pinctrl-0 = <0x000000d7>;
+	pmu@0 {
+	};
+};
+sunxi#fdt set /twi0 status "disable"
+libfdt fdt_path_offset() returned FDT_ERR_NOTFOUND
+sunxi#fdt set twi0 status "disable" 
+sunxi#fdt list twi0                
+twi@0x01c2ac00 {
+	#address-cells = <0x00000001>;
+	#size-cells = <0x00000000>;
+	compatible = "allwinner,sun8i-twi";
+	device_type = "twi0";
+	reg = <0x00000000 0x01c2ac00 0x00000000 0x00000400>;
+	interrupts = <0x00000000 0x00000007 0x00000004>;
+	clocks = <0x00000031>;
+	clock-frequency = <0x00061a80>;
+	pinctrl-names = "default", "sleep";
+	pinctrl-1 = <0x00000033>;
+	status = "disable";
+	pinctrl-0 = <0x000000d7>;
+	pmu@0 {
+	};
+};
+
+
+8，我的疑问：在BOOT中修改了 引脚的驱动能力，或者是上下拉，那么会不会直接把sys_config 或者设备树中的东西也修改了
+
+
+
+
+9，保保存存配配置置 
+命令格式：fdt save 作用：保存配置到存储介质上，掉电不会丢失。
+
+在 BOOT 中配制好后，一旦save，可以实现掉电保存。
+
+
+
+10，我的总结： 全志科技的UBOOT可以修改什么东西？？？
+
+可以实现和 设备树一样的功能，就是配制一下引脚相关的一些参数，仅此而已。
+
+20200727
+以前觉得211，985牛逼，后来发现，这个和211，985没关系，百分之99取决于后天的方向和思维的调整，以及努力程度，想要改变自己的程度。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
