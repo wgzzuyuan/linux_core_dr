@@ -372,5 +372,7 @@ Welcome to cqr40
 cqr40 login: 
 Welcome to cqr40
 
+当复位按键按下的时候，断狗，直接就复位了，不用发送REVOOT命令
+
 
 
