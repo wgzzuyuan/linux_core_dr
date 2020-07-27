@@ -99,6 +99,278 @@ Requesting system reboot
 [   31.000670] Restarting system.
 
 
+# reboot
+# Stopping sshd: OK
+Initializing postgresql data base...
+su: unknown user postgres
+done
+Stopping postgresql: su: unknown user postgres
+OK
+Stopping network: ifdown: interface eth0 not configured
+OK
+Stopping system message bus: killall: dbus-daemon: no process killed
+done
+Saving random seed... done.
+Stopping logging: OK
+umount: devtmpfs busy - remounted read-only
+[   42.655900] EXT4-fs (mmcblk0p7): re-mounted. Opts: (null)
+umount: none busy - remounted read-only
+umount: can't unmount /sys: Invalid argument
+umount: can't unmount /proc: Invalid argument
+The system is going down NOW!
+Sent SIGTERM to all processes
+Sent[   44.671460] CPU1: shutdown
+[   44.676315] CPU2: shutdown
+[   44.681315] CPU3: shutdown
+[   44.685159] drivers/cpufreq/cpufreq.c:reboot_notifier_call: stop none boot cpus done
+[   44.693983] drivers/devfreq/sunxi_dramfreq.c:sunxi_dramfreq_reboot: stop dramfreq done
+[   44.703409] [alarmtimer] have no shutdown alarm! alarmtimer_shutdown 330
+[   44.712848] [VFE]Defined suspend!
+[   44.716470] [VFE]Vfe Shutdown!
+[   45.450126] sunxi-mmc sdc2: try to disable cache
+[   45.455300] sunxi-mmc sdc2: sdc set ios: clk 50000000Hz bm PP pm ON vdd 16 width 8 timing LEGACY(SDR12) dt B
+[   45.466588] sunxi-mmc sdc2: sdc set ios: clk 50000000Hz bm PP pm ON vdd 16 width 1 timing LEGACY(SDR12) dt B
+[   45.477720] sunxi-mmc sdc2: sdc set ios: clk 400000Hz bm PP pm ON vdd 16 width 1 timing LEGACY(SDR12) dt B
+[   45.488696] sunxi-mmc sdc2: sdc set ios: clk 400000Hz bm PP pm ON vdd 16 width 1 timing LEGACY(SDR12) dt B
+[   45.502002] sunxi-mmc sdc2: sdc set ios: clk 400000Hz bm PP pm ON vdd 16 width 1 timing LEGACY(SDR12) dt B
+[   45.530471] sunxi-mmc sdc2: sunxi_mmc_do_shutdown_com: mmc shutdown exit..ok
+[   45.538321] [ohci2-controller]: ohci shutdown start
+[   45.544043] [ohci2-controller]: ohci shutdown end
+[   45.549237] [ehci2-controller]: ehci shutdown start
+[   45.554853] [ehci2-controller]: ehci shutdown end
+[   45.560338] [ohci1-controller]: ohci shutdown start
+[   45.565773] [ohci1-controller]: ohci shutdown end
+[   45.571225] [ehci1-controller]: ehci shutdown start
+[   45.577103] [ehci1-controller]: ehci shutdown end
+[   45.582507] sunxi_ohci_hcd_shutdown, ohci0-controller is disable, need not shutdown
+[   45.591112] sunxi_ehci_hcd_shutdown, ehci0-controller is disable, need not shutdown
+[   45.599708] Restarting system.
+[   45.603297] 
+[   45.604951] Restarting Linux version 3.10.108 (wgze@Ubuntu-h0018) (gcc version 4.6.3 20120201 (prerelease) (crosstool-NG linaro-1.13.1-2012.02-20120222 - Linaro GCC 2012.02) ) #114 SMP Tue Jul 21 10:34:24 CST 2020
+[   45.604951] 
+HELLO! BOOT0 is starting!
+boot0 commit : 8 
+boot0 version : 4.0
+set pll start
+set pll end
+rtc[0] value = 0x00000000
+rtc[1] value = 0x00000000
+rtc[2] value = 0x00000000
+rtc[3] value = 0x00000000
+rtc[4] value = 0x00000000
+rtc[5] value = 0x00000000
+DRAMC IS FOUR
+DRAM BOOT DRIVE INFO: V1.1
+the chip id is 0x00000001
+the chip id is 0x00000001
+the chip id is 0x00000001
+the chip id is 0x00000001
+the chip id is 0x00000001
+PMU: AXP221
+ddr voltage = 1500 mv
+DRAM CLK =576 MHZ
+DRAM Type =3 (2:DDR2,3:DDR3,6:LPDDR2,7:LPDDR3)
+DRAM zq value: 0x003b3bfb
+DRAM SIZE =1024 M
+DRAM simple test OK.
+dram size =1024
+rtc standby flag is 0x00000000, super standby flag is 0x00000000
+card no is 2
+sdcard 2 line count 8
+[mmc]: mmc driver ver 2016-06-2 17:11
+[mmc]: ***Try MMC card 2***
+[mmc]: MMC 5.1
+[mmc]: HSSDR52/SDR25 8 bit
+[mmc]: 50000000 Hz
+[mmc]: 7456 MB
+[mmc]: ***SD/MMC 2 init OK!!!***
+sum=788f48e8
+src_sum=788f48e8
+Succeed in loading uboot from sdmmc flash.
+Entry_name        = u-boot
+Ready to disable icache.
+0xffffffff 0xffffffff
+0xff1bffff 0xffffffff
+0xff0d18ff 0xffffffff
+0xffffffff 0xffffffff
+0xffffffff 0xffffffff
+0xffffffff 0xffffffff
+Jump to secend Boot.
+
+
+
+
+开发板正常的BOOT的流程：
+U-Boot 2014.07 (Nov 29 2016 - 04:02:45) Allwinner Technology 
+
+uboot commit : 8 
+uboot:normal mode
+i2c_init ok
+[      0.372]pmbus:   ready
+[      0.391]PMU: AXP221
+[      0.391]PMU: AXP22x found
+[      0.392]PMU: dcdc2 1200
+[      0.394]PMU: cpux 1008 Mhz,AXI=336 Mhz
+PLL6=600 Mhz,AHB1=200 Mhz, APB1=100Mhz  MBus=400Mhz
+set power on vol to default
+device_type = 3253, onoff=1
+dcdc1_vol = 3300, onoff=1
+dcdc2_vol = 1200, onoff=1
+dcdc3_vol = 1100, onoff=1
+dcdc4_vol = 1100, onoff=0
+aldo1_vol = 3300, onoff=1
+aldo2_vol = 2500, onoff=1
+aldo3_vol = 3000, onoff=1
+dc1sw_vol = 3000, onoff=0
+dc5ldo_vol = 1100, onoff=0
+dldo1_vol = 3300, onoff=0
+dldo2_vol = 3300, onoff=0
+dldo3_vol = 3300, onoff=0
+dldo4_vol = 3300, onoff=0
+eldo1_vol = 1200, onoff=0
+eldo2_vol = 1500, onoff=0
+eldo3_vol = 2800, onoff=0
+vbus not exist
+run key detect
+no key found
+no uart input
+DRAM:  1 GiB
+fdt addr: 0x76e88b78
+Relocation Offset is: 35edf000
+In:    serial
+Out:   serial
+Err:   serial
+gic: normal mode
+workmode = 0,storage type = 2
+[      0.591]MMC:	 2
+[mmc]: mmc driver ver 2016-05-20 17:18:00-test0
+[mmc]: get sdc_ex_dly_used 2, use auto tuning sdly
+SUNXI SD/MMC: 2
+[mmc]: 50 MHz...
+[mmc]: sample: 55 - 181(ps)
+[mmc]: ds: 55 - 181(ps)
+[mmc]: 100 MHz...
+[mmc]: sample: 27 - 185(ps)
+[mmc]: ds: 28 - 178(ps)
+[mmc]: 200 MHz...
+[mmc]: sample: 14 - 178(ps)
+[mmc]: ds: 14 - 178(ps)
+[mmc]: media type 0x8000000
+[mmc]: ************Try MMC card 2************
+[mmc]: host caps: 0x6f
+[mmc]: MID 000015 PSN 8f9bc6ae
+[mmc]: PNM 8GTF4R -- 0x38-47-54-46-34
+[mmc]: PRV 0.6
+[mmc]: MDT m-5 y-2019
+[mmc]: MMC v5.1
+[mmc]: speed mode     : HSSDR52/SDR25 
+[mmc]: clock          : 50000000 Hz
+[mmc]: bus_width      : 8 bit
+[mmc]: user capacity  : 7456 MB
+[mmc]: boot capacity  : 4096 KB
+[mmc]: rpmb capacity  : 512 KB
+[mmc]: ************SD/MMC 2 init OK!!!************
+[mmc]: ========best spd md: 2-HSDDR52/DDR50, freq: 2-50000000
+[mmc]: already at HSSDR52_SDR25 mode
+[mmc]: hsddr 2-50000000
+[mmc]: get max-frequency ok 150000000 Hz
+[mmc]: 1 1 0: 1 1 0
+[mmc]: delete mmc-hs400-1_8v from dtb
+[mmc]: delete mmc-hs200-1_8v from dtb
+[mmc]: get max-frequency ok 50000000 Hz
+[mmc]: erase_grp_size      : 0x400WrBlk*0x200=0x80000 Byte
+[mmc]: secure_feature      : 0x55
+[mmc]: secure_removal_type : 0x39
+[mmc]: EOL Info(Rev blks): Normal
+[mmc]: Wear out(type A): 0%-10% life time used
+[mmc]: Wear out(type B): 0%-10% life time used
+[      0.838]sunxi flash init ok
+[      0.856]start
+drv_disp_init
+init_clocks: finish init_clocks.
+device name:tve0, par name:pll_video0
+pwm_request: reg = 0x1c23400. pwm = 0.
+request pwm success, pwm = 0.
+tv_init:
+tv_init:
+drv_disp_init finish
+fetch script data disp.dev0_output_type fail. using defval=0
+no found any device of disp. num=0
+disp 0, clk: pll(1043000000),clk(1043000000),dclk(149000000) dsi_rate(1043000000)
+     clk real:pll(1039500000),clk(1039500000),dclk(148500000) dsi_rate(0)
+enable power vcc-lcd, ret=0
+enable power vcc-pd, ret=0
+fdt_setprop_u32 disp.boot_disp(0x100) code:<no error>
+bad fb_cfg[w=0,h=0,bpp=32,format=0]
+[      1.362]end
+PowerBus = 3( 2:vBus 3:acBus other: not exist)
+no battery, limit to dc
+no battery exist
+sunxi_bmp_logo_display
+bmp_name=bootlogo.bmp
+reading bootlogo.bmp
+160054 bytes read in 5 ms (30.5 MiB/s)
+fb_lock: bad fb_id=0
+cv=00000000, base= 00000000
+show bmp on fb failed !
+--------fastboot partitions--------
+-total partitions:5-
+-name-        -start-       -size-      
+boot-resource: 1000000       2000000     
+env         : 3000000       1000000     
+boot        : 4000000       4000000     
+rootfs      : 8000000       0           
+UDISK       : 8000000       0           
+-----------------------------------
+base bootcmd=run setargs_nand boot_normal
+bootcmd set setargs_mmc
+key 0
+cant find rcvy value
+cant find fstbt value
+no misc partition is found
+to be run cmd=run setargs_mmc boot_normal
+read item0 copy0
+Item0 (Map) magic is bad
+the secure storage item0 copy0 is bad
+read item0 copy1
+Item0 (Map) magic is bad
+the secure storage item0 copy0 == copy1, the data is good
+the secure storage map is empty
+no item name mac in the map
+sunxi storage read fail
+no item name wifi_mac in the map
+sunxi storage read fail
+no item name bt_mac in the map
+sunxi storage read fail
+no item name specialstr in the map
+sunxi storage read fail
+check user data form private
+the private part isn't exist
+update dtb dram start
+update dtb dram  end
+[      1.637]inter uboot shell
+Hit any key to stop autoboot:  0 
+read partition: boot or recovery
+[      1.942]sunxi flash read :offset 4000000, 18927410 bytes OK
+Android's image name: sun8i_arm
+Kernel load addr 0x40008000 size 14253 KiB
+RAM disk load addr 0x41000000 size 3207 KiB
+[      2.010]ready to boot
+prepare for kernel
+[mmc]: mmc exit start
+[mmc]: 50 MHz...
+[mmc]: sample: 27 - 370(ps)
+[mmc]: ds: 28 - 357(ps)
+[mmc]: 100 MHz...
+[mmc]: sample: 14 - 357(ps)
+[mmc]: ds: 14 - 357(ps)
+[mmc]: 200 MHz...
+[mmc]: sample: 9 - 277(ps)
+[mmc]: ds: 9 - 277(ps)
+[mmc]: mmc 2 exit o
+Welcome to cqr40
+cqr40 login: 
+Welcome to cqr40
 
 
 
