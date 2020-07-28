@@ -40,6 +40,19 @@ https://www.cnblogs.com/lxyd/p/9671673.html
 看门狗的原理是用GPIO来控制的。
 
 
+7，按键最后是怎么操作的，底层驱动给上层提供的是什么接口？？？
+
+不仅仅要提供 /sys/class/gpio/gpio271
+还要提供 /dev/input/event0
+
+
+8,   因为要提供以上接口，确定一下，只要设备树中配置了引脚，就可以实现 /sys/class/gpio/gpio271 的操作。
+
+那么，驱动中怎么编写，可以实现  /dev/input/event0 ？？？
+
+
+9，
+
 
 
 
