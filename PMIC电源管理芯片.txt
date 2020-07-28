@@ -340,14 +340,40 @@ axp_i2c_probe in axp81x-board.c (linux-3.10\drivers\power\axp_power_legacy\axp81
 
 
 
+GPIO 中断怎么测试？？？
+
+select/poll/epoll
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+1，第一次自己写驱动函数
+
+
+remove 函数要做什么，remove 要做的就是释放掉设备
+static int keyirq_remove (struct platform_device *pdev)
+{
+	free_irq(IRQ_EINT(9),pdev);
+	free_irq(IRQ_EINT(10),pdev);
+	
+	return 0;
+}
+
+probe 函数做了什么，probe 函数就是探测设备的函数。------中断的实现，就是在probe 函数中注册中断，用request_irq 函数实现中断注册
+static int keyirq_probe(struct platform_device *pdev)
+{
+	char *banner = "keyirq Initialize\n";
+	printk(banner);
+	//注册中断
+	request_irq(IRQ_EINT(9),eint9_interrupt,IRQ_TYPE_EDGE_FALLING,"my_eint9",pdev);
+	return 0;
+}
 
 
 
+2， 中断处理函数做什么？？？
 
-
+中断处理函数在Linux内核中是一个回调函数，回调函数做了什么，回调函数具体的做中断后要做的事情
 
 
 
