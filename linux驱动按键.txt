@@ -54,6 +54,7 @@ https://www.cnblogs.com/lxyd/p/9671673.html
 9，
 
 /dev/input目录 /dev/input目录下的事件都是在驱动中调用input_register_device(struct input_dev *dev)产生的。
+event  是个事件，Linux内核中的事件指的是什么？？？
 
 
 10，
