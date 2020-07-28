@@ -400,7 +400,26 @@ static int keyirq_probe(struct platform_device *pdev)
 必须要把这2个电源都能实现掉电上报，并且保存要保存的信息。
 
 7.   
+保护现场，执行中断处理函数，恢复现场。
 
+
+static int axp22_probe(struct i2c_client *client, const struct i2c_device_id *id)
+
+
+struct i2c_client *client 来自设备树，是由设备树转换来的，
+
+struct i2c_client {
+	unsigned short flags;		/* div., see below		*/
+	unsigned short addr;		/* chip address - NOTE: 7bit	*/
+					/* addresses are stored in the	*/
+					/* _LOWER_ 7 bits		*/
+	char name[I2C_NAME_SIZE];
+	struct i2c_adapter *adapter;	/* the adapter we sit on	*/
+	struct i2c_driver *driver;	/* and our access routines	*/
+	struct device dev;		/* the device structure		*/
+	int irq;			/* irq issued by device		*/
+	struct list_head detected;
+};
 
 
 
