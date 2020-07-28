@@ -227,14 +227,107 @@ PMIC怎么检测到电源的插入的？？？ 这个功能说的简单了，就
 
 
 
+中断注册函数：request_irq的5个参数
+request_irq(unsigned int irq, irq_handler_t handler, unsigned long flags,
+	    const char *name, void *dev)
+	参数1：irq,中断号。（和平台架构相关，结合datasheet以及平台文件）
+	参数2：中断处理函数
+	参数3：中断标记。上升/下降沿，高/低电平……
+	参数4：中断名字。cat /proc/interrupts
+	参数5：使用设备的设备结构体或者NULL。free_irq
+free_irq(irq,*dev_id)
+	
+request_irq的调用
+
+
+4412上外部中断号如何对应：（IRQ_EINT(x)和datasheet对应）
+HOME和BACK
+EXYNOS4_GPX1[1]和EXYNOS4_GPX1[2]
+→KP_COL[1]和KP_COL[2]
+→XEINT_9和XEINT_10
+IRQ_EINT(9)和IRQ_EINT(10)
+
+
+
+怎么样在Linux内核中添加一个中断设备？？？
+
+
+准备工作：
+	在平台文件中注册设备：keyirq
+	添加：
+        struct platform_device s3c_device_keyirq_ctl = {
+        .name   = "keyirq",
+        .id     = -1,
+	};
+	&s3c_device_keyirq_ctl,
+	
+	重新编译烧写内核
+	
+	
+Linux 的中断和单片机的中断不一样，Linux的中断注册了后，还要释放，单片机没有注册和释放，直接初始化，然后用就行了。
 
 
 
 
 
 
+栋哥
+让我看一下中断注册函数是怎么用的？？？
+
+举例：串口中断如下：
+ret = request_irq(IRQ_CONRX, serial21285_rx_chars, 0, serial21285_name, port);
+参数1：irq,中断号。（和平台架构相关，结合datasheet以及平台文件）  IRQ_CONRX
+	参数2：中断处理函数                                    serial21285_rx_chars
+	参数3：中断标记。上升/下降沿，高/低电平……                0
+	参数4：中断名字。cat /proc/interrupts                  serial21285_name
+	参数5：使用设备的设备结构体或者NULL。free_irq            port
+	
+	
+	
+ret = request_irq(IRQ_CONTX, serial21285_tx_chars, 0, serial21285_name, port);
 
 
+下面是电源芯片的中断函数的调用的地方，中断就是这么用的，下面是中断函数的使用过程：
+axp_irq_chip_register in axp-core.c (linux-3.10\drivers\power\axp_power) : 
+	if (axp_dev_register_count == 1) {
+		err = request_irq(irq_no, axp_irq, irq_flags, "axp", irq_data);
+		goto irq_out;
+	} else if (axp_dev_register_count == 2) {
+		return irq_data;
+axp_irq_chip_register in axp-core.c (linux-3.10\drivers\power\axp_power) : 
+#else
+	err = request_irq(irq_no, axp_irq, irq_flags, irq_chip->name, irq_data);
+#endif
+
+#ifdef CONFIG_DUAL_AXP_USED
+axp_irq_chip_register in axp-core.c (linux-3.10\drivers\power\axp_power_new) : 
+
+	err = request_irq(irq_no, axp_irq, irq_flags, irq_chip->name, irq_data);
+	if (err)
+		goto free_irqs;
+
+axp_register_mfd in axp-mfd.c (linux-3.10\drivers\power\axp_power_legacy) : 
+#ifdef CONFIG_SUNXI_ARISC
+	ret = request_irq(dev->irq_number, axp_mfd_irq_cb,
+		IRQF_SHARED|IRQF_DISABLED|IRQF_NO_SUSPEND, "axp", dev);
+	if (ret) {
+		printk(KERN_ERR "failed to request irq %d\n",
+axp_i2c_probe in axp20-board.c (linux-3.10\drivers\power\axp_power\axp20) : 
+
+	ret = request_irq(client->irq, axp_mfd_irq_handler, flags, "axp20", &axp20_dev);
+	if (ret) {
+		dev_err(&client->dev, "failed to request irq %d\n", client->irq);
+		goto out_free_chip;
+axp_i2c_probe in axp81x-board.c (linux-3.10\drivers\power\axp_power_legacy\axp81x) : 
+
+	ret = request_irq(client->irq, axp_mfd_irq_handler,
+		IRQF_SHARED|IRQF_DISABLED, "axp81x", &axp81x_dev);
+	if (ret) {
+		dev_err(&client->dev, "failed to request irq %d\n",
+
+
+
+中断函数的调用，这个简单
 
 
 
