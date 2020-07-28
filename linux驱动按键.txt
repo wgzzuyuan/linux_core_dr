@@ -53,6 +53,12 @@ https://www.cnblogs.com/lxyd/p/9671673.html
 
 9，
 
+/dev/input目录 /dev/input目录下的事件都是在驱动中调用input_register_device(struct input_dev *dev)产生的。
+
+
+10，
+
+
 
 
 
