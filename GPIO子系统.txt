@@ -71,42 +71,48 @@ PO_BASE 448
 
 5,
 
+用的全志科技的板子是 4核的CPU。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# cat /proc/interrupts     
+           CPU0       CPU1       CPU2       CPU3       
+ 29:       1141       8399        480       6190       GIC  arch_timer
+ 30:          0          0          0          0       GIC  arch_timer
+ 32:          4          0          0          0       GIC  axp22_irq_chip
+ 33:        416          0          0          0       GIC  uart0
+ 39:       1242          0          0          0       GIC  twi0
+ 40:          0          0          0          0       GIC  twi1
+ 41:          0          0          0          0       GIC  twi2
+ 53:          0          0          0          0       GIC  Sunxi_keypad
+ 54:       3875          0          0          0       GIC  sunxi_timer
+ 56:          0          0          0          0       GIC  1c20400.rtc
+ 59:          0          0          0          0       GIC  1c02000.dma-controller
+ 60:          0          0          0          0       GIC  PIN_GRP
+ 63:     144982          0          0          0       GIC  sunxikbd
+ 66:       1137          0          0          0       GIC  sunxi-mmc
+ 70:          0          0          0          0       GIC  sunxi_usb_udc
+ 71:          0          0          0          0       GIC  ehci_hcd:usb1
+ 72:          0          0          0          0       GIC  ohci_hcd:usb4
+ 76:          0          0          0          0       GIC  dispaly
+ 85:          0          0          0          0       GIC  cedar_dev
+ 96:          0          0          0          0       GIC  ohci_hcd:usb5
+ 97:          0          0          0          0       GIC  ohci_hcd:usb6
+ 98:          0          0          0          0       GIC  mdfs
+108:          0          0          0          0       GIC  ehci_hcd:usb2
+110:          6         20         15         15       GIC  ehci_hcd:usb3
+117:          0          0          0          0       GIC  1c50000.eth
+128:          0          0          0          0       GIC  1000000.tr
+129:          0          0          0          0       GIC  1c31000.tvd0
+130:          0          0          0          0       GIC  1c32000.tvd1
+131:          0          0          0          0       GIC  1c33000.tvd2
+132:          0          0          0          0       GIC  1c34000.tvd3
+IPI0:          0          0          0          0  CPU wakeup interrupts
+IPI1:          0        752        654       1790  Timer broadcast interrupts
+IPI2:       3363       2927       2671       2561  Rescheduling interrupts
+IPI3:         87        118         45        122  Function call interrupts
+IPI4:          0         12          1          5  Single function call interrupts
+IPI5:          0          0          0          0  CPU stop interrupts
+IPI6:          0          0          0          0  completion interrupts
+IPI7:          0          0          0          0  CPU backtrace
 
 
 
