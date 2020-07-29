@@ -119,6 +119,15 @@ PO_BASE 448
 
 把一个完整的结构体变量作为参数传递,要将全部成员值一个一个传递,费时间又费空间,开销大。
 
+2，GPIO作为输入的时候，shell脚本的测试方法：
+
+# echo 256  > /sys/class/gpio/export 
+# echo in > /sys/class/gpio/gpio256/direction
+# cat /sys/class/gpio/gpio256/value 
+1
+
+
+3，
 
 
 
