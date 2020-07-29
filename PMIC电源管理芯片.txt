@@ -429,10 +429,22 @@ PMIC注册了几个设备，怎么获取的这个消息
 要从内核代码中确定，而不是从应用层去看，必须要内核中哪个函数做了这个事情，
 
 
-9，
+9，PMIC 中的 I2C 的操作流程？？？
+
+×××_read：
+msg赋值 →→→ i2c_transfer →→→ copy_to_user
 
 
+×××_write ：
 
+copy_from_user →→→ msg赋值 →→→ i2c_transfer 
+
+×××_probe：
+ MKDEV(major,0)  →→→ cdev_init →→→ cdev_add →→→ class_create →→→  device_create
+ 
+ 最主要的函数，就是这个×××_probe() 函数
+ 
+ 
 
 
 
