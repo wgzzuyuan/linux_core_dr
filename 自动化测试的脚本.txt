@@ -77,7 +77,11 @@ wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
 sleep 1
 udhcpc -i  wlan0
 
-6，
+6， 怎么把测试结果重定向到一个文件中，用什么命令？？？
+
+就是一个 ” > “ 。
+
+./test_485.sh >wgz.log
 
 
 
