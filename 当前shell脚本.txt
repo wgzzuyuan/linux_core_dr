@@ -11,5 +11,10 @@ tail 的使用不对，要加你要看的文件的路径
  tail -f /opt/uart/wgzuart.log
  
  
- 
+啥是个shell 脚本，shell 脚本是干啥用的？？？？
+就是测试用的，还有就是编译用的，linux下主要还是应用层写代码，调用驱动层的接口。
+
+但是要搞清楚，echo 1 > /dev/watchdog 的时候，调用的是驱动的哪一个接口？？？
+
+
 
