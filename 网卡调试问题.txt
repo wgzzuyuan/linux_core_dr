@@ -121,8 +121,12 @@ MDIO是一根双向的数据线。用来传送MAC层的控制信息和物理层�
 技术支持：给内核打补丁。
 
 
-13, 
-
+13, udhcpc -i eth0
+# udhcpc -i eth0
+udhcpc: started, v1.26.2
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
 
 
 14,
