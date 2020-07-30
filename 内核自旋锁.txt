@@ -1,0 +1,18 @@
+
+
+
+	spin_lock(&yuzhen_lock);
+	/* disable, then re-enable timer0 */
+	tmcon = __raw_readl(KS8695_TMR_VA + KS8695_TMCON);
+	__raw_writel(tmcon & ~TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
+	__raw_writel(tmcon | TMCON_T0EN, KS8695_TMR_VA + KS8695_TMCON);
+	spin_unlock(&yuzhen_lock);
+  
+  
+  自旋锁是怎么用的？？？
+  和互斥所的用法是一样的。
+  
+  
+  自旋锁和互斥所的区别是什么？？？
+  
+  
