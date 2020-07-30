@@ -1,0 +1,78 @@
+Linux驱动suspend,resume
+         终止  恢复
+         
+         
+
+
+
+# pwd
+/sys/power
+
+
+
+# cd power/
+# ls
+autosleep          pm_freeze_timeout  scene_state        wake_lock
+aw_ex_standby      pm_print_times     scene_unlock       wake_unlock
+aw_pm              pm_test            state              wakeup_count
+pm_async           scene_lock         sys_pwr_dm_mask    wakeup_src
+# cat wakeup_src 
+dynamic wakeup src config:
+wakeup_src 0x0
+WAKEUP_SRC is as follow:
+
+wakeup_gpio_map 0x0
+WAKEUP_GPIO, for cpus:pl, pm, and axp, is as follow: 
+wakeup_gpio_group 0x0
+WAKEUP_GPIO, for cpux:pa, pb, pc, pd, .., is as follow: 
+extended_standby id = 0x8
+==========================wakeup src setting usage help info========:
+echo wakeup_src_e para (1:enable)/(0:disable) > /sys/power/wakeup_src
+demo: echo 0x2000 0x200 1 > /sys/power/wakeup_src
+wakeup_src_e para info: 
+WAKEUP_SRC is as follow:
+CPU0_WAKEUP_MSGBOX                   bit 0x1 	 CPU0_WAKEUP_KEY	                     bit 0x2 	 
+CPU0_WAKEUP_EXINT	                   bit 0x4 	 CPU0_WAKEUP_IR	                      bit 0x8 	 
+CPU0_WAKEUP_ALARM	                   bit 0x10 	 CPU0_WAKEUP_USB	                     bit 0x20 	 
+CPU0_WAKEUP_TIMEOUT                  bit 0x40 	 
+CPU0_WAKEUP_GPIO	                    bit 0x80 	 
+	want to know gpio config & suspended status detail?
+		cat /sys/power/aw_pm/debug_mask for help.
+
+Warning: para err. 	 Warning: para err. 	 Warning: para err. 	 Warning: para err. 	 CPUS_WAKEUP_LOWBATT                  bit 0x1000 	 CPUS_WAKEUP_USB                      bit 0x2000 	 
+CPUS_WAKEUP_AC                       bit 0x4000 	 CPUS_WAKEUP_ASCEND                   bit 0x8000 	 
+CPUS_WAKEUP_DESCEND                  bit 0x10000 	 CPUS_WAKEUP_SHORT_KEY                bit 0x20000 	 
+CPUS_WAKEUP_LONG_KEY                 bit 0x40000 	 CPUS_WAKEUP_IR                       bit 0x80000 	 
+CPUS_WAKEUP_ALM0                     bit 0x100000 	 CPUS_WAKEUP_ALM1                     bit 0x200000 	 
+CPUS_WAKEUP_TIMEOUT                  bit 0x400000 	 
+CPUS_WAKEUP_GPIO	                    bit 0x800000 	 
+	want to know gpio config & suspended status detail?
+		cat /sys/power/aw_pm/debug_mask for help.
+
+CPUS_WAKEUP_USBMOUSE                 bit 0x1000000 	 CPUS_WAKEUP_LRADC                    bit 0x2000000 	 
+Warning: para err. 	 CPUS_WAKEUP_CODEC                    bit 0x8000000 	 CPUS_WAKEUP_BAT_TEMP                 bit 0x10000000 	 
+CPUS_WAKEUP_FULLBATT                 bit 0x20000000 	 CPUS_WAKEUP_HMIC                     bit 0x40000000 	 
+CPUS_WAKEUP_POWER_EXP                bit 0x80000000 	 
+gpio para info: 
+	 SUNXI_BANK_SIZE bit 0x20 
+	 SUNXI_PA_BASE   bit 0x0 
+	 SUNXI_PB_BASE   bit 0x20 
+	 SUNXI_PC_BASE   bit 0x40 
+	 SUNXI_PD_BASE   bit 0x60 
+	 SUNXI_PE_BASE   bit 0x80 
+	 SUNXI_PF_BASE   bit 0xa0 
+	 SUNXI_PG_BASE   bit 0xc0 
+	 SUNXI_PH_BASE   bit 0xe0 
+	 SUNXI_PI_BASE   bit 0x100 
+	 SUNXI_PJ_BASE   bit 0x120 
+	 SUNXI_PK_BASE   bit 0x140 
+	 SUNXI_PL_BASE   bit 0x160 
+	 SUNXI_PM_BASE   bit 0x180 
+	 SUNXI_PN_BASE   bit 0x1a0 
+	 SUNXI_PO_BASE   bit 0x1c0 
+	 AXP_PIN_BASE    bit 0x400
+
+
+
+
+
