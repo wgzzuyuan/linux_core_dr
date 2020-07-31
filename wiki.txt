@@ -249,6 +249,10 @@ uart 驱动 /driver/tty/serial  目录下
 grep是查找匹配条件的行，find是搜索匹配条件的文件。
 
 
+2020 07 31
+
+压缩  compress
+tar 命令 解压缩是 -x 压缩是 -c   原理就是这么个原理
 
 
 
