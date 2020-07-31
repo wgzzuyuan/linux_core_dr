@@ -72,6 +72,12 @@ gpio para info:
 	 SUNXI_PO_BASE   bit 0x1c0 
 	 AXP_PIN_BASE    bit 0x400
 
+2020 07 31
+
+linux内核驱动中读写函数 
+
+read方法是从设备拷贝数据到用户空间：使用copy_to_user
+write方法是从用户空间拷贝数据到设备：使用copy_from_user。
 
 
 
