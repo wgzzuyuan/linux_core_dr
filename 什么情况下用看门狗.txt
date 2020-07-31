@@ -37,7 +37,9 @@ write (watchdog,buf,1);
 
 
 
-3，
+3，看门狗的段狗和 reboot 是一个原理吗？？？
+
+
 
 
 
