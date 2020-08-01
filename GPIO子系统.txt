@@ -133,7 +133,39 @@ IPI7:          0          0          0          0  CPU backtrace
 1
 
 
-3，
+3， 内核驱动中，GPIO的函数 与 文件系统中，GPIO文件的位置的关系？？？ 
+
+ｐＡｎＧ(346042205)  11:15:35
+内核提供gpiolib来统一管理系统中所有的gpio，gpiolib本身属于驱动框架的一部分。
+
+ｐＡｎＧ(346042205)  11:15:56
+然后我去gpiolib.c里面找了一下
+
+postcore_initcall(gpiolib_sysfs_init);
+	static int __init gpiolib_sysfs_init(void)
+		status = class_register(&gpio_class);
+			static struct class gpio_class = {
+				.name =		"gpio",
+				.owner =	THIS_MODULE,
+
+				.class_attrs =	gpio_class_attrs,
+			};
+
+ｐＡｎＧ(346042205)  11:17:20
+就是因为有gpiolib的缘故 
+
+所以在sysfs里面会有一类 class 是gpio
+
+ｐＡｎＧ(346042205)  11:18:32
+跟gpio相关的设备最终都会调用gpiochip_add函数去注册
+
+ｐＡｎＧ(346042205)  11:19:34
+可能就是因为有了gpiolib，而里面又进行了class_register的操作吧，所以能在sys/class/gpio里面操作与gpio相关的设备咯
+
+4，  GPIO的文件是在/sys class 目录下，为什么别的设备在 /dev 目录下？？？比如，I2C,SPI，应用层是直接操作 /dev 下的文件。
+
+
+
 
 
 
