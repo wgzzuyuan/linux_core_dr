@@ -166,7 +166,12 @@ postcore_initcall(gpiolib_sysfs_init);
 
 
 
+5，GPIO目录下的架构是怎么走的？？？   
 
+直接看I2C目录下的源码。
+I2C目录下的架构是怎么走的，直接看I2C目录下的源码。
+
+6， 
 
 
 
