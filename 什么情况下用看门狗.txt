@@ -44,6 +44,15 @@ write (watchdog,buf,1);
  直接用这个命令看生成的文件
  
  
+ 
+ C语言积累：
+ sprintf 怎么用格式函数？？？----自己怎么联系，怎么变成自己的东西？？？
+ 
+ 
+ 
+ sprintf(p->name,"port%d",i);
+ 
+ 
 
 
 
