@@ -53,6 +53,14 @@ write (watchdog,buf,1);
  sprintf(p->name,"port%d",i);
  
  
+4， 今天要做的是：把GPIO下生成的设备放到 /dev 目录下
+
+---怎么把看门狗的文件生成到 /dev 目录下
+
+
+
+5，
+
 
 
 
