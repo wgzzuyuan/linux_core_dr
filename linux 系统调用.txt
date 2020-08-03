@@ -40,6 +40,72 @@ FD_ISSET(fd, &rdfds)
 
 FD_ISSET(0, &rdfds)
 
+1， 内核中的ioctl 到底该怎么用？？？
+%%%%%%这个函数的实现和file指针没啥关系，只要是命令和参数，函数的实现原理，主要是根据命令做具体的事情，比如说是1和0，在GPIO和LED中，
+
+传入的参数是1，然后把这个1参数GPIO置一，置零。
+
+
+
+static long hello_ioctl( struct file *files, unsigned int cmd, unsigned long arg){
+	printk("cmd is %d,arg is %d\n",cmd,arg);
+	
+	switch(cmd)
+	{
+		case 0:
+		case 1:
+			if (arg > LED_NUM) {
+				return -EINVAL;
+			}
+
+			gpio_set_value(led_gpios[arg], cmd);
+			break;
+
+		default:
+			return -EINVAL;
+	}
+	
+	gpio_set_value(led_gpios[2], 0);
+	
+	return 0;
+}
+
+2，应用层的ioctl 是怎么实现的？？？ 实现的原理是什么，是怎么调底层的函数的？？？
+
+
+
+3，
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
