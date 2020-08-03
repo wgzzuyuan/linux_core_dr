@@ -171,7 +171,14 @@ postcore_initcall(gpiolib_sysfs_init);
 直接看I2C目录下的源码。
 I2C目录下的架构是怎么走的，直接看I2C目录下的源码。
 
-6， 
+6， 文件系统中各个目录下的文件是怎么生成的？？？
+
+是调用了文件系统的API，在 sys/clsss/gpio 目录下生成的文件
+gpiod_export  →→→ sysfs_create_group  →→→ sysfs_create_subdir→→→create_files
+
+
+7， 
+
 
 
 
