@@ -177,7 +177,11 @@ I2C目录下的架构是怎么走的，直接看I2C目录下的源码。
 gpiod_export  →→→ sysfs_create_group  →→→ sysfs_create_subdir→→→create_files
 
 
-7， 
+7， proc 是个文件系统的名字，常见的文件系统有 ext2, yaffs ，
+
+
+
+8， 
 
 
 
